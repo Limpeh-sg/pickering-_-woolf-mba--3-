@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, Upload, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 interface LeadFormProps {
@@ -26,6 +26,7 @@ const industryOptions = [
 export default function LeadForm({ lang }: LeadFormProps) {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [error, setError] = useState('');
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,6 +36,7 @@ export default function LeadForm({ lang }: LeadFormProps) {
   const phoneRef = useRef<HTMLInputElement>(null);
   const experienceRef = useRef<HTMLSelectElement>(null);
   const industryRef = useRef<HTMLSelectElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const getFormType = (): 'apply' | 'consult' | 'brochure' => {
     const path = location.pathname;
@@ -42,6 +44,35 @@ export default function LeadForm({ lang }: LeadFormProps) {
     if (path === '/consult') return 'consult';
     if (path === '/brochure') return 'brochure';
     return 'apply';
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Check file size (10MB = 10 * 1024 * 1024 bytes)
+    const maxSize = 10 * 1024 * 1024;
+    if (file.size > maxSize) {
+      setError(lang === 'en' 
+        ? 'File size must be less than 10MB' 
+        : '文件大小必须小于 10MB');
+      setStatus('error');
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+      return;
+    }
+
+    setUploadedFile(file);
+    setError('');
+    setStatus('idle');
+  };
+
+  const handleRemoveFile = () => {
+    setUploadedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -129,6 +160,58 @@ export default function LeadForm({ lang }: LeadFormProps) {
           <option key={option.value} value={option.value}>{lang === 'en' ? option.en : option.zh}</option>
         ))}
       </select>
+
+      {/* File Upload Section */}
+      <div className="space-y-3">
+        <label className="block text-sm font-bold text-primary">
+          {lang === 'en' 
+            ? 'Supporting Documents (Optional)' 
+            : '补充材料（可选）'}
+        </label>
+        <p className="text-xs text-muted-foreground font-medium">
+          {lang === 'en'
+            ? 'Upload your CV, transcript, or other relevant documents (Max 10MB)'
+            : '上传您的简历、成绩单或其他相关文件（最大 10MB）'}
+        </p>
+        
+        {!uploadedFile ? (
+          <label className="flex items-center justify-center gap-3 w-full border-2 border-dashed border-[#dbe8f7] rounded-xl p-6 cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+            <Upload className="w-5 h-5 text-primary" />
+            <span className="text-sm font-medium text-primary">
+              {lang === 'en' ? 'Click to upload file' : '点击上传文件'}
+            </span>
+            <input
+              ref={fileInputRef}
+              type="file"
+              onChange={handleFileChange}
+              className="hidden"
+              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            />
+          </label>
+        ) : (
+          <div className="flex items-center justify-between gap-3 w-full border-2 border-primary/20 bg-primary/5 rounded-xl p-4">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <Upload className="w-5 h-5 text-primary flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-foreground truncate">
+                  {uploadedFile.name}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB
+                </p>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={handleRemoveFile}
+              className="flex-shrink-0 p-1 hover:bg-red-100 rounded-full transition-colors"
+              aria-label={lang === 'en' ? 'Remove file' : '删除文件'}
+            >
+              <X className="w-5 h-5 text-red-600" />
+            </button>
+          </div>
+        )}
+      </div>
 
       <button
         type="submit"
