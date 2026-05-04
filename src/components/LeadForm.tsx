@@ -185,7 +185,6 @@ export default function LeadForm({ lang }: LeadFormProps) {
               type="file"
               onChange={handleFileChange}
               className="hidden"
-              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
             />
           </label>
         ) : (
