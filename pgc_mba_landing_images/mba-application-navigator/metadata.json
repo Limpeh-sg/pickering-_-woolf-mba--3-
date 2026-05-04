@@ -1,0 +1,6 @@
+{
+  "name": "MBA Application Navigator",
+  "description": "A smart admission guidance system for the PGC MBA programme, featuring eligibility checking, fee calculation, and scholarship matching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
