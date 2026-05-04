@@ -7,7 +7,7 @@ const formTypeLabel: Record<LeadRecord['formType'], string> = {
   consult: '联系顾问',
   brochure: '下载简章',
   contact: '联系表单',
-  'smart-guide': 'MBA 智能助手',
+  'chat-assistant': 'MBA 聊天助手',
 };
 
 export async function notifyLark(lead: LeadRecord): Promise<{ success: boolean; error?: string }> {

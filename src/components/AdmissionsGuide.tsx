@@ -135,9 +135,11 @@ export default function AdmissionsGuide({ lang }: AdmissionsGuideProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const leadLevel = getLeadLevel(state.score);
+    // +30 for submitting form
+    const finalScore = state.score + 30;
+    const leadLevel = getLeadLevel(finalScore);
     const advisorAction = generateAdvisorAction(
-      state.score,
+      finalScore,
       state.tags,
       state.answers,
       lang
@@ -149,7 +151,7 @@ export default function AdmissionsGuide({ lang }: AdmissionsGuideProps) {
       source: 'website',
       utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
       utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
-      lead_score: state.score,
+      lead_score: finalScore,
       lead_level: leadLevel,
       tags: state.tags,
       answers: state.answers,

@@ -27,7 +27,7 @@ interface EmailData {
   phone: string;
   experience: string;
   industry?: string;
-  formType: 'apply' | 'consult' | 'brochure';
+  formType: 'apply' | 'consult' | 'brochure' | 'contact' | 'chat-assistant';
 }
 
 const getSubjectByType = (type: string): string => {

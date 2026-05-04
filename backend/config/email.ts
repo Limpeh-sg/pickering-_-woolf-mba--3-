@@ -27,7 +27,7 @@ interface EmailData {
   phone: string;
   experience: string;
   industry?: string;
-  formType: 'apply' | 'consult' | 'brochure';
+  formType: 'apply' | 'consult' | 'brochure' | 'contact' | 'chat-assistant';
 }
 
 const getSubjectByType = (type: string): string => {
@@ -35,6 +35,8 @@ const getSubjectByType = (type: string): string => {
     apply: 'Application Received - Pickering MBA',
     consult: 'Consultation Request Confirmed - Pickering MBA',
     brochure: 'Brochure Download Confirmed - Pickering MBA',
+    contact: 'Contact Request Received - Pickering MBA',
+    'chat-assistant': 'MBA Inquiry Received - Pickering MBA',
   };
   return subjects[type] || 'Thank You - Pickering MBA';
 };
@@ -44,6 +46,8 @@ const getUserMessageByType = (type: string, name: string): string => {
     apply: `Dear ${name},\n\nThank you for submitting your application to the Pickering Global Campus MBA program. We have received your information and will review it shortly.\n\nOur admissions team will contact you within 2-3 business days with next steps.\n\nBest regards,\nPickering Global Campus Admissions Team`,
     consult: `Dear ${name},\n\nThank you for requesting a consultation with our MBA program team. We appreciate your interest in Pickering Global Campus.\n\nOur academic advisors will reach out to you within 24 hours to schedule a suitable time for your consultation.\n\nBest regards,\nPickering Global Campus`,
     brochure: `Dear ${name},\n\nThank you for requesting our MBA brochure. We've sent the detailed program information to your email.\n\nIf you have any questions about our program, feel free to reach out to us at admissions@pickering.education or via WhatsApp at +65 8982 0800.\n\nBest regards,\nPickering Global Campus`,
+    contact: `Dear ${name},\n\nThank you for contacting Pickering Global Campus. We have received your inquiry and will respond within 24 hours.\n\nBest regards,\nPickering Global Campus`,
+    'chat-assistant': `Dear ${name},\n\nThank you for using our MBA Chat Assistant. We have received your information and our admissions team will contact you within 24 hours.\n\nBest regards,\nPickering Global Campus`,
   };
   return messages[type] || `Dear ${name},\n\nThank you for your interest in Pickering Global Campus MBA program.`;
 };

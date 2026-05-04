@@ -3,7 +3,7 @@ import path from 'node:path';
 
 export interface LeadRecord {
   id: string;
-  formType: 'apply' | 'consult' | 'brochure' | 'contact' | 'smart-guide';
+  formType: 'apply' | 'consult' | 'brochure' | 'contact' | 'chat-assistant';
   name: string;
   email: string;
   phone: string;

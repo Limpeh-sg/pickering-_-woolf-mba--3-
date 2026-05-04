@@ -1,4 +1,3 @@
-import SmartGuide from './components/SmartGuide';
 import { motion } from 'motion/react';
 import { Globe, ShieldCheck, GraduationCap, Clock, Award, CheckCircle2 } from 'lucide-react';
 
@@ -178,8 +177,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* The Floating Logic Component */}
-      <SmartGuide />
     </div>
   );
 }

@@ -43,7 +43,7 @@ const validateFormData = (data: FormData): { valid: boolean; error?: string } =>
 const handleFormSubmission = async (
   req: Request,
   res: Response,
-  formType: 'apply' | 'consult' | 'brochure' | 'contact' | 'smart-guide'
+  formType: 'apply' | 'consult' | 'brochure' | 'contact' | 'chat-assistant'
 ) => {
   try {
     const { name, email, phone, experience, industry, firstName, lastName } = req.body as FormData;
@@ -126,8 +126,8 @@ router.post('/contact', async (req: Request, res: Response) => {
   await handleFormSubmission(req, res, 'contact');
 });
 
-router.post('/smart-guide', async (req: Request, res: Response) => {
-  await handleFormSubmission(req, res, 'smart-guide');
+router.post('/chat-assistant', async (req: Request, res: Response) => {
+  await handleFormSubmission(req, res, 'chat-assistant');
 });
 
 // Health check

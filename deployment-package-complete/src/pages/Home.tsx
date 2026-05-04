@@ -128,7 +128,7 @@ export default function Home({ lang }: HomeProps) {
               alt="Pickering Global Campus"
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
             />
             {/* Blue frosted glass overlay (20% opacity - more transparent) */}
             <div className="absolute inset-0 bg-primary/20 pointer-events-none" />

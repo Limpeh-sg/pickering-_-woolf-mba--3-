@@ -311,7 +311,7 @@ MBA Chat Assistant Conversation:
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-      await fetch(`${apiUrl}/api/consult`, {
+      await fetch(`${apiUrl}/api/chat-assistant`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
