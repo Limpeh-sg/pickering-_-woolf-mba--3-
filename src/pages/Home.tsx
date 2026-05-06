@@ -388,12 +388,12 @@ export default function Home({ lang }: HomeProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-120px' }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-             <RecognitionFileCard title="Malta Further and Higher Education Authority" subtitle="Higher Education Authority" desc={t.recognition.framework.malta.text} tag="Accreditation" image="/assets/Melta-DZ8e3MNc.png" />
-             <RecognitionFileCard title="Council of Europe" subtitle="Lisbon Convention" desc={t.recognition.framework.lisbon.text} tag="Framework" image="/assets/Lisbon Recognition Convention-DqjXrqhh.png" />
-             <RecognitionFileCard title="Europass" subtitle="European Union Qualifications" desc={t.recognition.framework.eu.text} tag="Standard" image="/assets/ECTS-BB8xoJ9D.png" />
-             <RecognitionFileCard title="Association to Advance Collegiate Schools of Business Member" subtitle="Business Alliance" desc={lang === 'en' ? 'Member college of the Association to Advance Collegiate Schools of Business Business Education Alliance.' : '国际商学院协会商业教育联盟成员学院。'} tag="Membership" image="/assets/AACSB-HRiRaVrV.png" />
+             <RecognitionFileCard title="Malta MFHEA" subtitle="Higher Education Authority" desc={t.recognition.framework.malta.text} image="/assets/Melta-DZ8e3MNc.png" />
+             <RecognitionFileCard title="Council of Europe" subtitle="Lisbon Convention" desc={t.recognition.framework.lisbon.text} image="/assets/Lisbon Recognition Convention-DqjXrqhh.png" />
+             <RecognitionFileCard title="Europass · ECTS" subtitle="European Union Qualifications" desc={t.recognition.framework.eu.text} image="/assets/ECTS-BB8xoJ9D.png" />
+             <RecognitionFileCard title="AACSB Alliance" subtitle="Business Education Alliance" desc={lang === 'en' ? 'Member college of the AACSB Business Education Alliance, committed to advancing business education globally.' : '国际商学院协会商业教育联盟成员学院。'} image="/assets/AACSB-HRiRaVrV.png" />
           </motion.div>
         </div>
       </section>
@@ -1083,22 +1083,21 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
   );
 }
 
-function RecognitionFileCard({ title, subtitle, desc, tag, image }: any) {
+function RecognitionFileCard({ title, subtitle, desc, image }: any) {
   return (
     <motion.div
       variants={revealItem}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -6 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="group bg-white rounded-3xl border border-border/10 p-8 flex flex-col text-left hover:border-primary/20 transition-all"
+      className="group bg-white rounded-3xl border border-border/60 p-7 flex flex-col text-left hover:border-primary/30 hover:shadow-[0_16px_40px_-12px_rgba(30,80,168,0.12)] transition-all duration-300"
     >
-      <div className="flex justify-between items-start mb-6">
-        <div className="h-12 flex items-center">
-          <img src={image} alt={title} className="h-full w-auto object-contain" loading="lazy" decoding="async" />
-        </div>
+      {/* Fixed-height logo area — all cards align */}
+      <div className="h-10 flex items-center mb-6">
+        <img src={image} alt={title} className="h-full w-auto max-w-[120px] object-contain" loading="lazy" decoding="async" />
       </div>
-      <h4 className="text-xl font-black text-foreground mb-1 tracking-tight leading-tight">{title}</h4>
-      <p className="text-xs font-black text-primary/60 mb-4">{subtitle}</p>
-      <p className="text-xs text-muted-foreground font-medium leading-relaxed">{desc}</p>
+      <h4 className="text-sm font-black text-foreground mb-1 tracking-tight leading-snug">{title}</h4>
+      <p className="text-xs font-bold text-primary/50 mb-3 uppercase tracking-wider">{subtitle}</p>
+      <p className="text-xs text-muted-foreground font-medium leading-relaxed flex-1">{desc}</p>
     </motion.div>
   );
 }
