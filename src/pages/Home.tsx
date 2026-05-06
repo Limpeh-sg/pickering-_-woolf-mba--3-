@@ -355,8 +355,8 @@ export default function Home({ lang }: HomeProps) {
             </motion.div>
 
             <motion.div variants={revealItem} className="relative">
-              <div className="absolute inset-0 bg-primary/5 rounded-[4rem]" />
-              <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-primary/5 rounded-[3rem]" />
+              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
                 <motion.img
                   whileHover={{ scale: 1.025 }}
                   transition={{ duration: 0.35, ease: easeOutQuint }}
@@ -559,7 +559,7 @@ export default function Home({ lang }: HomeProps) {
           </div>
 
           {/* Application Requirements — unified card */}
-          <div className="bg-white rounded-[2.5rem] border border-border/10 mb-8 overflow-hidden">
+          <div className="bg-white rounded-3xl border border-border/10 mb-8 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-8 md:p-10 lg:p-12">
                 <h4 className="text-2xl font-black text-foreground mb-6">{t.admissions.checklist.title}</h4>
@@ -581,7 +581,7 @@ export default function Home({ lang }: HomeProps) {
           </div>
 
           {/* Intakes & Fees — unified card */}
-          <div id="tuition" className="bg-primary text-white rounded-[2.5rem] overflow-hidden scroll-mt-28">
+          <div id="tuition" className="bg-primary text-white rounded-3xl overflow-hidden scroll-mt-28">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto]">
               {/* Intakes */}
               <div className="p-8 md:p-10 lg:p-12 flex flex-col gap-8">
@@ -1089,7 +1089,7 @@ function RecognitionFileCard({ title, subtitle, desc, tag, image }: any) {
       variants={revealItem}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="group bg-white rounded-[2rem] border border-border/10 p-8 flex flex-col text-left hover:border-primary/20 transition-all"
+      className="group bg-white rounded-3xl border border-border/10 p-8 flex flex-col text-left hover:border-primary/20 transition-all"
     >
       <div className="flex justify-between items-start mb-6">
         <div className="h-12 flex items-center">
@@ -1117,7 +1117,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
       variants={revealItem}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="bg-white p-10 md:p-12 rounded-[2.5rem] border border-border/10 text-left relative overflow-hidden group h-fit"
+      className="bg-white p-10 md:p-12 rounded-3xl border border-border/10 text-left relative overflow-hidden group h-fit"
     >
       <div className="relative -mx-10 -mt-10 md:-mx-12 md:-mt-12 mb-8 h-44 w-[calc(100%+5rem)] md:w-[calc(100%+6rem)] overflow-hidden">
         <img
@@ -1173,7 +1173,7 @@ function FacultyCard({ name, title, desc }: any) {
       variants={revealItem}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="bg-white p-8 rounded-[2rem] border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col items-start"
+      className="bg-white p-8 rounded-3xl border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col items-start"
     >
       <h4 className="text-xl font-black text-foreground mb-2 tracking-tight leading-tight">{name}</h4>
       <p className="text-primary text-xs font-black mb-6">{title}</p>

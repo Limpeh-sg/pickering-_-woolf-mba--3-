@@ -1,154 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ffffff;
-  --color-foreground: #1a1a1a;
+  --color-background: #f8f9fc;
+  --color-foreground: #0f1623;
   --color-card: #ffffff;
-  --color-card-foreground: #1a1a1a;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #1a1a1a;
-  --color-primary: #2562C2;
+  --color-primary: #1e50a8;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #f0f4f8;
-  --color-secondary-foreground: #2562C2;
-  --color-muted: #f8fafc;
-  --color-muted-foreground: #64748b;
-  --color-accent: #2562C2;
+  --color-secondary: #e8f0fd;
+  --color-secondary-foreground: #1e50a8;
+  --color-muted: #f1f4f9;
+  --color-muted-foreground: #5a6a85;
+  --color-accent: #1e50a8;
   --color-accent-foreground: #ffffff;
-  --color-border: #e2e8f0;
-  --color-input: transparent;
-  --color-input-background: #f3f3f5;
-  --color-switch-background: #cbced4;
-  --color-ring: oklch(0.708 0 0);
+  --color-border: #dde3ef;
 
   --font-sans: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.625rem;
-  --radius-xl: 0.875rem;
-
-  /* Typography: 3 tiers
-     display : text-3xl / text-4xl  — headings, big numbers
-     body    : text-sm  (14px)      — paragraphs, card content
-     label   : text-xs  (12px)      — kickers, captions, tags
-  */
-
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   @keyframes modalSlideIn {
-    from { opacity: 0; transform: translateY(16px) scale(0.97); }
-    to   { opacity: 1; transform: translateY(0)   scale(1);    }
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
   }
 }
 
+/* ─────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────── */
 @layer base {
-  * {
-    @apply border-border;
-  }
+  *, *::before, *::after { box-sizing: border-box; }
 
-  /* Global smooth transitions for interactive elements */
-  a, button, [role="button"] {
-    transition: color 200ms ease, background-color 200ms ease,
-                border-color 200ms ease, opacity 200ms ease,
-                box-shadow 200ms ease, transform 200ms ease;
-  }
+  * { @apply border-border; }
+
+  html { scroll-behavior: smooth; }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground;
     font-family: var(--font-sans);
-    font-size: 0.875rem; /* text-sm baseline */
-    line-height: 1.6;
+    font-size: 0.875rem;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   h1, h2, h3, h4, h5 {
     font-family: var(--font-sans);
     font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
     text-wrap: balance;
+    color: var(--color-foreground);
   }
 
-  section {
-    @apply relative overflow-hidden;
+  /* Smooth hover on every interactive element */
+  a, button, [role="button"], input, select, textarea {
+    transition: color 180ms ease, background-color 180ms ease,
+                border-color 180ms ease, box-shadow 180ms ease,
+                opacity 180ms ease, transform 180ms ease;
   }
 
   img {
-    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
-                filter 600ms cubic-bezier(0.22, 1, 0.36, 1),
-                opacity 400ms ease;
+    transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+                filter 550ms cubic-bezier(0.22, 1, 0.36, 1);
   }
+
+  section { @apply relative overflow-hidden; }
 }
 
+/* ─────────────────────────────────────────────
+   COMPONENTS
+───────────────────────────────────────────── */
 @layer components {
-  /* ── Layout ── */
+
+  /* Layout */
   .site-container {
-    @apply max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-20;
+    @apply w-full max-w-screen-2xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16;
   }
 
-  /* ── Typography tiers ── */
-
-  /* Tier 1 — Display: section headings, card headings, stat numbers */
-  .t-display {
-    @apply text-2xl md:text-3xl font-black tracking-tighter leading-tight;
-  }
-  /* Hero h1 gets its own responsive scale within display tier */
-
-  /* Tier 2 — Body: paragraphs, descriptions */
-  .t-body {
-    @apply text-sm font-medium leading-relaxed text-muted-foreground;
-  }
-
-  /* Tier 3 — Label: kickers, tags, captions, footnotes */
-  .t-label {
-    @apply text-xs font-black uppercase tracking-[0.2em];
-  }
-
-  /* ── Shared components ── */
+  /* ── 3-tier typography ──
+     display  text-3xl+   headings, stats, card titles
+     body     text-sm     paragraphs, descriptions
+     label    text-xs     kickers, tags, captions, footnotes
+  */
   .section-heading {
-    @apply text-2xl md:text-3xl font-black text-foreground tracking-tighter leading-tight;
+    @apply text-2xl md:text-[2rem] font-black text-foreground tracking-[-0.03em] leading-[1.08];
   }
 
   .section-kicker {
-    @apply text-primary font-black text-xs uppercase tracking-[0.2em];
+    @apply inline-flex items-center gap-2 text-xs font-black text-primary uppercase tracking-[0.18em];
+  }
+  .section-kicker::before {
+    content: '';
+    @apply inline-block w-4 h-px bg-primary/50 shrink-0;
   }
 
+  /* Buttons */
   .cta-button {
-    @apply inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3
-           text-center text-sm font-black leading-tight
-           transition-all duration-200 ease-out
-           active:scale-[0.97];
+    @apply inline-flex min-h-[3rem] items-center justify-center gap-2
+           rounded-xl px-6 py-3 text-sm font-black leading-none
+           tracking-wide transition-all duration-200 ease-out
+           active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-primary;
   }
 
-  /* Card hover lift — apply to any hoverable card */
-  .card-hover {
-    transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
-                border-color 250ms ease,
-                box-shadow 250ms ease;
+  /* Cards */
+  .card {
+    @apply bg-white rounded-3xl border border-border/60
+           transition-all duration-300 ease-out;
   }
-  .card-hover:hover {
-    transform: translateY(-6px);
+  .card:hover {
+    @apply border-primary/25;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -12px rgba(30,80,168,0.12);
   }
 }
 
+/* ─────────────────────────────────────────────
+   UTILITIES
+───────────────────────────────────────────── */
 @layer utilities {
-  .text-monolith {
-    @apply font-black tracking-tighter leading-[1.05];
-  }
+  .animate-modal-slide-in { animation: modalSlideIn 0.3s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .animate-fade-up         { animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; }
 
-  .animate-modal-slide-in {
-    animation: modalSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .scholarship-bling {
-    animation: scholarshipPulse 1.8s ease-in-out infinite;
-  }
+  .scholarship-bling { animation: scholarshipPulse 1.8s ease-in-out infinite; }
 
   .perspective-1000 { perspective: 1000px; }
   .backface-hidden  { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
@@ -156,8 +133,12 @@
   .rotate-y-180     { transform: rotateY(180deg); }
   .pb-safe          { padding-bottom: env(safe-area-inset-bottom); }
   .text-balance     { text-wrap: balance; }
+  .text-monolith    { @apply font-black tracking-tighter leading-[1.05]; }
 }
 
+/* ─────────────────────────────────────────────
+   KEYFRAMES
+───────────────────────────────────────────── */
 @keyframes scholarshipPulse {
   0%, 100% { border-color: rgba(232,193,93,0.72); filter: brightness(1);    }
   50%      { border-color: rgba(255,230,140,1);   filter: brightness(1.14); }

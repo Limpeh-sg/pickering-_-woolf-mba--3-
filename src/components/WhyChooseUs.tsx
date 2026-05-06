@@ -80,7 +80,7 @@ function HighlightCard({ title, desc, ease, index }: HighlightCardProps) {
       }}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25, ease }}
-      className="group bg-white rounded-[2rem] border border-border/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 flex flex-col text-left h-full relative overflow-hidden"
+      className="group bg-white rounded-3xl border border-border/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 flex flex-col text-left h-full relative overflow-hidden"
     >
       <div className="h-44 overflow-hidden relative">
         <img src={images[index]} alt="" decoding="async" className="h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
@@ -102,7 +102,7 @@ function HighlightCard({ title, desc, ease, index }: HighlightCardProps) {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="p-8 md:p-10 bg-white border-2 border-primary/10 rounded-[1.5rem] md:rounded-[2rem] text-left hover:border-primary transition-all group">
+    <div className="p-8 md:p-10 bg-white border-2 border-primary/10 rounded-[1.5rem] md:rounded-3xl text-left hover:border-primary transition-all group">
       <p className="text-3xl md:text-5xl font-black mb-2 md:mb-4 tracking-tighter text-primary group-hover:scale-110 transition-transform">{value}</p>
       <p className="text-xs md:text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
     </div>

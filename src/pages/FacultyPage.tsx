@@ -18,7 +18,7 @@ export default function FacultyPage({ lang }: FacultyPageProps) {
     <BackButton />
     <div className="bg-background min-h-screen pt-36 pb-24">
       <div className="site-container">
-        <div className="relative mb-10 h-52 sm:h-64 md:h-80 overflow-hidden rounded-[2rem]">
+        <div className="relative mb-10 h-52 sm:h-64 md:h-80 overflow-hidden rounded-3xl">
           <img
             src="/pgc_mba_landing_images/dean-office.webp"
             alt={lang === 'en' ? 'Faculty-led online business learning discussion' : '师资带领的在线商科学习讨论'}
@@ -60,7 +60,7 @@ export default function FacultyPage({ lang }: FacultyPageProps) {
 
 function FacultyCard({ name, title, desc }: any) {
   return (
-    <div className="bg-white p-8 rounded-[2rem] border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col">
+    <div className="bg-white p-8 rounded-3xl border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col">
       <h4 className="text-xl font-black text-foreground mb-2 tracking-tight leading-tight">{name}</h4>
       <p className="text-primary text-xs font-black mb-6">{title}</p>
       <p className="text-xs text-muted-foreground leading-relaxed font-medium">{desc}</p>
