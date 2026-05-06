@@ -245,7 +245,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Mobile form — full layout, always visible below hero */}
       <section className="lg:hidden bg-white border-b border-border/10">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="site-container py-10">
           <p className="font-black text-foreground text-base tracking-tight mb-1">
             {lang === 'en' ? 'Find out if this MBA fits your next step.' : '了解这个 MBA 是否适合你的下一步。'}
           </p>
@@ -265,7 +265,7 @@ export default function Home({ lang }: HomeProps) {
             exit={{ height: 0, opacity: 0, transition: { duration: 0.3 } }}
             className="hidden lg:block bg-white border-b border-border/10 overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex items-center gap-8">
+            <div className="site-container py-5 flex items-center gap-8">
               <div className="shrink-0 min-w-[140px]">
                 <p className="text-xs font-black text-primary mb-0.5">
                   {lang === 'en' ? 'Free Eligibility Check' : '免费资格评估'}
@@ -293,7 +293,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Dynamic Numeric Stats Module */}
       <section className="bg-white py-12 md:py-16 border-b border-border/10 text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <motion.div
             variants={revealContainer}
             initial="hidden"
@@ -319,7 +319,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Overview Combined */}
       <section id="about" className="py-20 md:py-24 bg-white overflow-hidden text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <motion.div
             variants={revealContainer}
             initial="hidden"
@@ -375,7 +375,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Recognition */}
       <section id="recognition" className="py-24 bg-primary/[0.04] relative overflow-hidden text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <div className="text-left mb-12">
             <p className="section-kicker mb-3">
               {lang === 'en' ? 'Official Accreditations' : '官方认证与学术框架'}
@@ -408,7 +408,7 @@ export default function Home({ lang }: HomeProps) {
           decoding="async"
         />
         <div className="absolute inset-0 bg-primary/10 backdrop-blur-[0.5px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto bg-white rounded-2xl p-5 md:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-5 lg:gap-10 relative z-10">
+        <div className="site-container bg-white rounded-2xl p-5 md:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-5 lg:gap-10 relative z-10">
           <div className="text-left space-y-2">
             <p className="text-primary text-[10px] font-black uppercase tracking-widest">
               {lang === 'en' ? 'Career Fit Check' : '职业适配评估'}
@@ -437,7 +437,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Curriculum */}
       <section id="curriculum" className="py-20 bg-muted text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
             <div>
               <p className="section-kicker mb-2">{t.curriculum.subtitle}</p>
@@ -469,7 +469,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Faculty - Limited to 4 */}
       <section id="faculty" className="py-16 md:py-20 bg-primary/[0.04] text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
             <div className="text-left">
               <p className="section-kicker mb-2">{t.faculty.subtitle}</p>
@@ -514,7 +514,7 @@ export default function Home({ lang }: HomeProps) {
            <div className="absolute inset-0 bg-primary/40 backdrop-blur-[0.5px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <motion.div
             variants={revealContainer}
             initial="hidden"
@@ -552,7 +552,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Admissions - Compact */}
       <section id="admission" className="py-20 bg-primary/[0.04] text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="text-left mb-12">
             <p className="section-kicker mb-3">{lang === 'en' ? 'Admissions' : '招生入学'}</p>
             <h2 className="section-heading">{t.admissions.title}</h2>
@@ -630,7 +630,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Scholarship */}
       <section className="py-24 bg-muted text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <p className="section-kicker mb-4">
@@ -670,7 +670,7 @@ export default function Home({ lang }: HomeProps) {
         {/* Decorative background pattern */}
         <div className="absolute inset-0 pointer-events-none opacity-10" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 pointer-events-none" style={{clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)'}} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <div className="text-left mb-16">
             <p className="section-kicker mb-3 text-secondary">
                {lang === 'en' ? "Professionals Who Didn't Stop." : '不断进取的职场精英'}
@@ -710,7 +710,7 @@ export default function Home({ lang }: HomeProps) {
         {/* Decorative accent blobs */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <div className="text-center mb-16">
             <p className="section-kicker mb-3">
               {lang === 'en' ? 'Questions You May Have' : '您可能关心的问题'}
@@ -751,7 +751,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Ready to Begin - Final Footer CTA */}
       <section className="py-16 md:py-24 bg-primary text-left">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16">
+        <div className="site-container">
           <div className="text-white relative">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 translate-x-1/4 pointer-events-none" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
@@ -855,7 +855,7 @@ function ProgrammeSectionNav({ lang }: { lang: 'en' | 'zh' }) {
   return (
     <section className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-border/70 text-left">
       <nav className="overflow-x-auto" aria-label={lang === 'en' ? 'Programme sections' : '课程页面导航'}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-max md:min-w-0">
+        <div className="site-container min-w-max md:min-w-0">
           <div className="flex items-center justify-start gap-4 md:gap-7 h-12">
             <span className="md:hidden relative text-xs font-black text-primary whitespace-nowrap py-4">
               {activeLabel}

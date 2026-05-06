@@ -17,7 +17,7 @@ export default function FacultyPage({ lang }: FacultyPageProps) {
     <>
     <BackButton />
     <div className="bg-background min-h-screen pt-36 pb-24">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="site-container">
         <div className="relative mb-10 h-52 sm:h-64 md:h-80 overflow-hidden rounded-[2rem]">
           <img
             src="/pgc_mba_landing_images/dean-office.webp"

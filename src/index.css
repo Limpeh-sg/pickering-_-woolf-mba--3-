@@ -68,6 +68,10 @@
 }
 
 @layer components {
+  .site-container {
+    @apply max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-20;
+  }
+
   .section-heading {
     @apply text-xl md:text-3xl font-black text-foreground tracking-tighter leading-tight;
   }

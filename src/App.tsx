@@ -61,11 +61,11 @@ export default function App() {
       <StickyCTA lang={lang} />
       
       <nav className="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-border/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center gap-4">
+        <div className="site-container">
+          <div className="flex justify-between h-24 items-center gap-4">
             <div className="flex-shrink-0 flex items-center gap-3 min-w-0">
               <Link to="/" className="flex items-center gap-3">
-                <img src="logo.png" alt="Pickering" className="h-10" loading="lazy" decoding="async" />
+                <img src="logo.png" alt="Pickering" className="h-14" loading="lazy" decoding="async" />
                 <div className="hidden sm:block border-l border-border/10 pl-3 max-w-[190px] xl:max-w-none">
                   <p className="text-[10px] font-black uppercase tracking-tighter leading-tight">Pickering Global Campus</p>
                   <p className="text-[8px] font-bold text-muted-foreground tracking-tight leading-tight">

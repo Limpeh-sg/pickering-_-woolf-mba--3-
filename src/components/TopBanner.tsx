@@ -88,7 +88,7 @@ export default function TopBanner({ lang }: TopBannerProps) {
           exit={{ height: 0, opacity: 0 }}
           className="bg-primary text-white overflow-hidden relative z-50 border-b border-white/5"
         >
-          <div className="max-w-7xl mx-auto px-10 py-1.5 flex items-center justify-center relative" style={{ minHeight: '2rem' }}>
+          <div className="site-container py-1.5 flex items-center justify-center relative" style={{ minHeight: '2rem' }}>
             <div className="overflow-hidden h-5 flex items-center">
               <AnimatePresence mode="wait">
                 <motion.p

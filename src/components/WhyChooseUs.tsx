@@ -22,7 +22,7 @@ export default function WhyChooseUs({ lang }: WhyChooseUsProps) {
     <section id="advantages" className="py-12 md:py-20 bg-muted relative overflow-hidden scroll-mt-28">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 translate-x-1/2 pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="site-container relative z-10">
         <div className="text-left mb-10 md:mb-14">
           <p className="section-kicker mb-3">
             {lang === 'en' ? 'Why Pickering Master of Business Administration?' : '为什么选择 Pickering 工商管理硕士？'}

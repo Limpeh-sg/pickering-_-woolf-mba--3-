@@ -20,7 +20,7 @@ export default function Footer({ lang }: FooterProps) {
     <footer className="bg-white text-primary text-left">
 
       {/* ── Main grid ────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-16 pb-10">
+      <div className="site-container pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 border-b border-primary/10 pb-12">
 
           {/* Col 1 — Brand */}
