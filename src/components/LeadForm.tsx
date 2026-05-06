@@ -80,53 +80,65 @@ export default function LeadForm({ lang }: LeadFormProps) {
     setStatus('submitting');
     setError('');
 
+    const firstName = firstNameRef.current?.value.trim() || '';
+    const lastName = lastNameRef.current?.value.trim() || '';
+    const email = emailRef.current?.value.trim() || '';
+    const phone = phoneRef.current?.value.trim() || '';
+    const experience = experienceRef.current?.value.trim() || '';
+    const industry = industryRef.current?.value.trim() || '';
+    const name = [firstName, lastName].filter(Boolean).join(' ');
+
+    if (!firstName || !lastName || !email || !phone || !experience || !industry) {
+      setError(lang === 'en' ? 'Please complete all fields.' : '请完整填写所有字段。');
+      setStatus('error');
+      return;
+    }
+
+    const formType = getFormType();
+    const larkWebhookUrl = import.meta.env.VITE_LARK_WEBHOOK_URL || '';
+    const recipientEmail = import.meta.env.VITE_FORM_RECIPIENT_EMAIL || 'admissions@pickering.education';
+
+    const mailtoFallback = () => {
+      const subject = encodeURIComponent(`Pickering ${formType} enquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nExperience: ${experience}\nIndustry: ${industry}\nForm: ${formType}`
+      );
+      window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+    };
+
     try {
-      const firstName = firstNameRef.current?.value.trim() || '';
-      const lastName = lastNameRef.current?.value.trim() || '';
-      const email = emailRef.current?.value.trim() || '';
-      const phone = phoneRef.current?.value.trim() || '';
-      const experience = experienceRef.current?.value.trim() || '';
-      const industry = industryRef.current?.value.trim() || '';
-      const name = [firstName, lastName].filter(Boolean).join(' ');
+      if (larkWebhookUrl) {
+        const res = await fetch(larkWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            msg_type: 'text',
+            content: {
+              text: [
+                'New Pickering MBA Lead',
+                `Form: ${formType}`,
+                `Name: ${name}`,
+                `Email: ${email}`,
+                `Phone: ${phone}`,
+                `Experience: ${experience}`,
+                `Industry: ${industry}`,
+                `Time: ${new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' })}`,
+              ].join('\n'),
+            },
+          }),
+        }).catch(() => null);
 
-      if (!firstName || !lastName || !email || !phone || !experience || !industry) {
-        setError(lang === 'en' ? 'Please complete all fields.' : '请完整填写所有字段。');
-        setStatus('error');
-        return;
-      }
-
-      const formType = getFormType();
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-      const formEndpoint = import.meta.env.VITE_FORM_ENDPOINT || `${apiUrl}/api/${formType}`;
-      const recipientEmail = import.meta.env.VITE_FORM_RECIPIENT_EMAIL || 'admissions@pickering.education';
-      const payload = { firstName, lastName, name, email, phone, experience, industry, formType };
-
-      const response = await fetch(formEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      }).catch(() => null);
-
-      if (!response) {
-        const subject = encodeURIComponent(`Pickering ${formType} enquiry from ${name}`);
-        const body = encodeURIComponent(
-          `Form type: ${formType}\nFirst name: ${firstName}\nLast name: ${lastName}\nEmail: ${email}\nPhone / WhatsApp: ${phone}\nExperience: ${experience}\nIndustry: ${industry}`
-        );
-        window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-      } else if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error || 'Failed to submit form');
+        if (!res || !res.ok) mailtoFallback();
+      } else {
+        mailtoFallback();
       }
 
       setStatus('success');
-      setTimeout(() => {
-        navigate(`/success?type=${formType}`);
-      }, 800);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : 'Unknown error occurred';
-      console.error('Form submission error:', message);
-      setError(message);
-      setStatus('error');
+      setTimeout(() => navigate(`/success?type=${formType}`), 800);
+    } catch {
+      mailtoFallback();
+      setStatus('success');
+      setTimeout(() => navigate(`/success?type=${formType}`), 800);
     }
   };
 

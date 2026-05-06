@@ -146,7 +146,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/Melta-DZ8e3MNc.png" alt="Malta MFHEA" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   {lang === 'en' ? 'Malta MFHEA' : '马耳他高等教育'}
                 </p>
               </div>
@@ -162,7 +162,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/Lisbon Recognition Convention-DqjXrqhh.png" alt="Lisbon Convention" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   {lang === 'en' ? 'Lisbon Convention' : '里斯本公约'}
                 </p>
               </div>
@@ -178,8 +178,8 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/ECTS-BB8xoJ9D.png" alt="ECTS" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
-                  Europass · ECTS
+                <p className="text-xs font-black text-black text-center leading-tight">
+                  EU Credit Transfer
                 </p>
               </div>
 
@@ -194,7 +194,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/AACSB-HRiRaVrV.png" alt="AACSB" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   AACSB
                 </p>
               </div>
@@ -210,7 +210,7 @@ export default function Home({ lang }: HomeProps) {
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.55, ease: easeOutQuint }}
                 >
-                  <p className="text-[10px] font-black text-secondary tracking-[0.3em] uppercase mb-4">
+                  <p className="text-xs font-black text-secondary tracking-[0.3em] uppercase mb-4">
                     {HERO_STATS[heroStatIndex].kicker[lang]}
                   </p>
                   <p className="text-6xl xl:text-7xl font-black text-white leading-none tracking-tighter mb-3">
@@ -245,8 +245,8 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Mobile form — full layout, always visible below hero */}
       <section className="lg:hidden bg-white border-b border-border/10">
-        <div className="max-w-7xl mx-auto px-6 py-10">
-          <p className="font-black text-foreground text-base tracking-tight mb-1">
+        <div className="site-container py-10">
+          <p className="font-black text-foreground text-sm tracking-tight mb-1">
             {lang === 'en' ? 'Find out if this MBA fits your next step.' : '了解这个 MBA 是否适合你的下一步。'}
           </p>
           <p className="text-xs text-muted-foreground font-medium leading-relaxed mb-6">
@@ -265,12 +265,12 @@ export default function Home({ lang }: HomeProps) {
             exit={{ height: 0, opacity: 0, transition: { duration: 0.3 } }}
             className="hidden lg:block bg-white border-b border-border/10 overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex items-center gap-8">
+            <div className="site-container py-5 flex items-center gap-8">
               <div className="shrink-0 min-w-[140px]">
                 <p className="text-xs font-black text-primary mb-0.5">
                   {lang === 'en' ? 'Free Eligibility Check' : '免费资格评估'}
                 </p>
-                <p className="text-[10px] text-muted-foreground font-medium">
+                <p className="text-xs text-muted-foreground font-medium">
                   {lang === 'en' ? 'Advisor responds in 24h' : '顾问 24 小时内回复'}
                 </p>
               </div>
@@ -293,7 +293,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Dynamic Numeric Stats Module */}
       <section className="bg-white py-12 md:py-16 border-b border-border/10 text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <motion.div
             variants={revealContainer}
             initial="hidden"
@@ -310,7 +310,7 @@ export default function Home({ lang }: HomeProps) {
               >
                 <p className="text-4xl md:text-5xl font-black text-primary tracking-tighter group-hover:scale-110 transition-transform origin-left">{stat.value}</p>
                 <div className="h-1 w-8 bg-secondary/30 rounded-full" />
-                <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest leading-tight">{stat.label}</p>
+                <p className="text-xs font-black text-muted-foreground uppercase tracking-widest leading-tight">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -319,7 +319,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Overview Combined */}
       <section id="about" className="py-20 md:py-24 bg-white overflow-hidden text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <motion.div
             variants={revealContainer}
             initial="hidden"
@@ -355,8 +355,8 @@ export default function Home({ lang }: HomeProps) {
             </motion.div>
 
             <motion.div variants={revealItem} className="relative">
-              <div className="absolute inset-0 bg-primary/5 rounded-[4rem]" />
-              <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-primary/5 rounded-[3rem]" />
+              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
                 <motion.img
                   whileHover={{ scale: 1.025 }}
                   transition={{ duration: 0.35, ease: easeOutQuint }}
@@ -375,7 +375,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Recognition */}
       <section id="recognition" className="py-24 bg-primary/[0.04] relative overflow-hidden text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <div className="text-left mb-12">
             <p className="section-kicker mb-3">
               {lang === 'en' ? 'Official Accreditations' : '官方认证与学术框架'}
@@ -388,12 +388,12 @@ export default function Home({ lang }: HomeProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-120px' }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-             <RecognitionFileCard title="Malta Further and Higher Education Authority" subtitle="Higher Education Authority" desc={t.recognition.framework.malta.text} tag="Accreditation" image="/assets/Melta-DZ8e3MNc.png" />
-             <RecognitionFileCard title="Council of Europe" subtitle="Lisbon Convention" desc={t.recognition.framework.lisbon.text} tag="Framework" image="/assets/Lisbon Recognition Convention-DqjXrqhh.png" />
-             <RecognitionFileCard title="Europass" subtitle="European Union Qualifications" desc={t.recognition.framework.eu.text} tag="Standard" image="/assets/ECTS-BB8xoJ9D.png" />
-             <RecognitionFileCard title="Association to Advance Collegiate Schools of Business Member" subtitle="Business Alliance" desc={lang === 'en' ? 'Member college of the Association to Advance Collegiate Schools of Business Business Education Alliance.' : '国际商学院协会商业教育联盟成员学院。'} tag="Membership" image="/assets/AACSB-HRiRaVrV.png" />
+             <RecognitionFileCard title="Malta MFHEA" subtitle="Higher Education Authority" desc={t.recognition.framework.malta.text} image="/assets/Melta-DZ8e3MNc.png" />
+             <RecognitionFileCard title="Council of Europe" subtitle="Lisbon Convention" desc={t.recognition.framework.lisbon.text} image="/assets/Lisbon Recognition Convention-DqjXrqhh.png" />
+             <RecognitionFileCard title="EU Credit Transfer" subtitle="European Credit Transfer System" desc={t.recognition.framework.eu.text} image="/assets/ECTS-BB8xoJ9D.png" />
+             <RecognitionFileCard title="AACSB Alliance" subtitle="Business Education Alliance" desc={lang === 'en' ? 'Member college of the AACSB Business Education Alliance, committed to advancing business education globally.' : '国际商学院协会商业教育联盟成员学院。'} image="/assets/AACSB-HRiRaVrV.png" />
           </motion.div>
         </div>
       </section>
@@ -408,12 +408,12 @@ export default function Home({ lang }: HomeProps) {
           decoding="async"
         />
         <div className="absolute inset-0 bg-primary/10 backdrop-blur-[0.5px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto bg-white rounded-2xl p-5 md:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-5 lg:gap-10 relative z-10">
+        <div className="site-container bg-white rounded-2xl p-5 md:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-5 lg:gap-10 relative z-10">
           <div className="text-left space-y-2">
-            <p className="text-primary text-[10px] font-black uppercase tracking-widest">
+            <p className="text-primary text-xs font-black uppercase tracking-widest">
               {lang === 'en' ? 'Career Fit Check' : '职业适配评估'}
             </p>
-            <h3 className="text-lg md:text-xl font-black text-foreground tracking-tighter leading-tight">
+            <h3 className="text-2xl font-black text-foreground tracking-tighter leading-tight">
               {lang === 'en' ? 'Find Out If This MBA Fits Your Next Step' : '了解此 MBA 是否适合您的下一步'}
             </h3>
             <p className="text-xs text-muted-foreground font-medium leading-relaxed">
@@ -437,7 +437,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Curriculum */}
       <section id="curriculum" className="py-20 bg-muted text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
             <div>
               <p className="section-kicker mb-2">{t.curriculum.subtitle}</p>
@@ -469,7 +469,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Faculty - Limited to 4 */}
       <section id="faculty" className="py-16 md:py-20 bg-primary/[0.04] text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
             <div className="text-left">
               <p className="section-kicker mb-2">{t.faculty.subtitle}</p>
@@ -514,27 +514,27 @@ export default function Home({ lang }: HomeProps) {
            <div className="absolute inset-0 bg-primary/40 backdrop-blur-[0.5px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <motion.div
             variants={revealContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-120px' }}
-            className="max-w-2xl mx-auto space-y-8 text-center"
+            className="max-w-2xl space-y-8 text-left"
           >
             <div>
-              <p className="section-kicker text-secondary mb-3 justify-center">
+              <p className="section-kicker text-secondary mb-3">
                 {lang === 'en' ? 'Optional Experience' : '可选研学体验'}
               </p>
               <h2 className="text-xl md:text-3xl font-black tracking-tighter mb-5 text-white leading-tight">
                 {lang === 'en' ? 'Singapore Residency Opportunity' : '新加坡研学机会'}
               </h2>
-              <p className="text-sm md:text-base text-white/80 font-medium leading-relaxed">
+              <p className="text-sm text-white/80 font-medium leading-relaxed">
                 {t.immersion.text}
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="flex flex-wrap gap-3">
                <span className="text-xs font-black text-white border border-white/20 rounded-xl px-4 py-2">{lang === 'en' ? 'Corporate Visits' : '企业参访'}</span>
                <span className="text-xs font-black text-white border border-white/20 rounded-xl px-4 py-2">{lang === 'en' ? 'Executive Network' : '高管人脉'}</span>
                <span className="text-xs font-black text-white border border-white/20 rounded-xl px-4 py-2">{lang === 'en' ? 'Leadership Workshops' : '领导力工作坊'}</span>
@@ -552,70 +552,79 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Admissions - Compact */}
       <section id="admission" className="py-20 bg-primary/[0.04] text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="text-left mb-12">
             <p className="section-kicker mb-3">{lang === 'en' ? 'Admissions' : '招生入学'}</p>
             <h2 className="section-heading">{t.admissions.title}</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-border/10 text-left">
-              <h4 className="text-2xl font-black text-foreground mb-6">{t.admissions.checklist.title}</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                {t.admissions.checklist.items.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-xs font-bold text-muted-foreground">
-                    <CheckCircle2 size={16} className="text-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-[10px] text-primary font-black">{t.admissions.checklist.note}</p>
-            </div>
-            
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-border/10 text-left flex flex-col justify-center">
-              <h4 className="text-2xl font-black text-foreground mb-4">{t.admissions.method.title}</h4>
-              <p className="text-muted-foreground mb-8 text-sm leading-relaxed font-medium">{t.admissions.method.text}</p>
+          {/* Application Requirements — unified card */}
+          <div className="bg-white rounded-3xl border border-border/10 mb-8 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-8 md:p-10 lg:p-12">
+                <h4 className="text-2xl font-black text-foreground mb-6">{t.admissions.checklist.title}</h4>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  {t.admissions.checklist.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm font-medium text-muted-foreground">
+                      <CheckCircle2 size={16} className="text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-primary font-bold">{t.admissions.checklist.note}</p>
+              </div>
+              <div className="p-8 md:p-10 lg:p-12 lg:border-l border-t lg:border-t-0 border-border/10 flex flex-col justify-center bg-primary/[0.02]">
+                <h4 className="text-2xl font-black text-foreground mb-4">{t.admissions.method.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed font-medium">{t.admissions.method.text}</p>
+              </div>
             </div>
           </div>
 
-          {/* Intakes & Fees - Strike-through logic */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-             <div className="lg:col-span-2 bg-primary text-white p-6 sm:p-8 lg:p-10 rounded-[2.5rem] text-left flex flex-col gap-8">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+          {/* Intakes & Fees — unified card */}
+          <div id="tuition" className="bg-primary text-white rounded-3xl overflow-hidden scroll-mt-28">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto]">
+              {/* Intakes */}
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col gap-8">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
                   <h4 className="text-2xl font-black">{t.admissions.intakes.title}</h4>
-                  <p className="text-[11px] font-black text-white/70">
+                  <p className="text-xs font-black text-white/60">
                     {lang === 'en' ? 'Rolling admission · 4 intakes per year' : '滚动招生 · 每年 4 次入学'}
                   </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
-                   {t.admissions.intakes.items.map((intake: any, i: number) => (
-                     <div key={i} className={`pb-4 border-b border-white/20 ${intake.expired ? 'opacity-30' : ''}`}>
-                        <p className={`font-black text-xl mb-2 ${intake.expired ? 'line-through decoration-white/50 decoration-2' : 'text-primary-foreground'}`}>
-                          {intake.label}
-                        </p>
-                        <div className="space-y-1 text-[10px] text-white/70 font-medium text-left">
-                          <p>{lang === 'en' ? 'Start' : '开课'}: {intake.start}</p>
-                          <p>{lang === 'en' ? 'Deadline' : '截止'}: {intake.deadline}</p>
-                        </div>
-                     </div>
-                   ))}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                  {t.admissions.intakes.items.map((intake: any, i: number) => (
+                    <div key={i} className={`pb-4 border-b border-white/20 ${intake.expired ? 'opacity-30' : ''}`}>
+                      <p className={`font-black text-xl mb-2 ${intake.expired ? 'line-through decoration-white/50 decoration-2' : ''}`}>
+                        {intake.label}
+                      </p>
+                      <div className="space-y-1 text-xs text-white/70 font-medium">
+                        <p>{lang === 'en' ? 'Start' : '开课'}: {intake.start}</p>
+                        <p>{lang === 'en' ? 'Deadline' : '截止'}: {intake.deadline}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-             </div>
-             <div id="tuition" className="bg-primary text-white p-6 sm:p-8 lg:p-10 rounded-[2.5rem] text-left relative overflow-hidden flex flex-col min-w-0 scroll-mt-28">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full" />
-                <h4 className="text-2xl font-black mb-8">{t.admissions.fees.title}</h4>
-                <div className="space-y-8 relative z-10 flex-1 text-left">
-                   <div className="text-left">
-                      <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Application' : '申请费'}</p>
-                      <p className="text-xl md:text-2xl font-black break-words">{t.admissions.fees.appFee}</p>
-                   </div>
-                   <div className="text-left">
-                      <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Tuition' : '学费'}</p>
-                      <p className="text-xl md:text-2xl font-black break-words">{t.admissions.fees.tuition}</p>
-                      <p className="text-xs mt-2 text-white/70 font-medium leading-relaxed">{t.admissions.fees.note}</p>
-                   </div>
+              </div>
+              {/* Fees */}
+              <div className="p-8 md:p-10 lg:p-12 lg:border-l border-t lg:border-t-0 border-white/10 flex flex-col justify-between lg:min-w-[260px] relative">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full pointer-events-none" />
+                <div className="space-y-6 relative z-10">
+                  <h4 className="text-2xl font-black">{t.admissions.fees.title}</h4>
+                  <div>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Application Fee' : '申请费'}</p>
+                    <p className="text-2xl font-black">{t.admissions.fees.appFee}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Programme Tuition' : '学费'}</p>
+                    <p className="text-2xl font-black">{t.admissions.fees.tuition}</p>
+                    <p className="text-sm mt-1.5 text-white/70 font-medium">{lang === 'en' ? 'Paid in 4 instalments' : '分 4 期支付'}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Optional Residency' : '研学费（可选）'}</p>
+                    <p className="text-xl font-black">{t.admissions.fees.immersion}</p>
+                  </div>
                 </div>
-                <div className="pt-6 border-t border-white/10 mt-auto space-y-3">
+                <div className="pt-6 border-t border-white/10 mt-6 space-y-3 relative z-10">
                   <Link to="/apply" className="cta-button w-full bg-white text-primary hover:bg-secondary hover:text-white">
                     {lang === 'en' ? 'Check My Eligibility' : '评估入学资格'}
                   </Link>
@@ -623,14 +632,15 @@ export default function Home({ lang }: HomeProps) {
                     {lang === 'en' ? 'View Scholarship Options →' : '查看奖学金方案 →'}
                   </Link>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Scholarship */}
       <section className="py-24 bg-muted text-left">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <p className="section-kicker mb-4">
@@ -655,8 +665,8 @@ export default function Home({ lang }: HomeProps) {
                     <span className={`text-xs font-black uppercase tracking-widest ${card.accentClass}`}>{card.keyword}</span>
                   </div>
                   <div className="p-4">
-                    <h4 className="font-black text-foreground text-xs mb-1.5 tracking-tight leading-tight">{card.title}</h4>
-                    <p className="text-[10px] text-muted-foreground font-medium leading-relaxed">{card.desc}</p>
+                    <h4 className="font-black text-foreground text-sm mb-1.5 tracking-tight leading-tight">{card.title}</h4>
+                    <p className="text-sm text-muted-foreground font-medium leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
               ))}
@@ -670,7 +680,7 @@ export default function Home({ lang }: HomeProps) {
         {/* Decorative background pattern */}
         <div className="absolute inset-0 pointer-events-none opacity-10" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 pointer-events-none" style={{clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)'}} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           <div className="text-left mb-16">
             <p className="section-kicker mb-3 text-secondary">
                {lang === 'en' ? "Professionals Who Didn't Stop." : '不断进取的职场精英'}
@@ -710,8 +720,8 @@ export default function Home({ lang }: HomeProps) {
         {/* Decorative accent blobs */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+        <div className="site-container relative z-10">
+          <div className="text-left mb-16">
             <p className="section-kicker mb-3">
               {lang === 'en' ? 'Questions You May Have' : '您可能关心的问题'}
             </p>
@@ -737,8 +747,8 @@ export default function Home({ lang }: HomeProps) {
              <FAQItem question={lang === 'en' ? "How do I apply?" : "我该如何申请？"} answer={lang === 'en' ? "Click Apply Now, fill in the online application form, and our admissions team will reach out within 2 business days to guide you through the next steps." : "点击【立即申请】，填写在线申请表，我们的招生团队将在2个工作日内与您联系，指引您完成后续步骤。"} />
           </motion.div>
 
-          <div className="mt-16 text-center">
-             <p className="text-sm md:text-base font-black text-foreground mb-5">
+          <div className="mt-16 text-left">
+             <p className="text-sm font-black text-foreground mb-5">
                {lang === 'en' ? 'Want to know if this programme fits your next step?' : '想确认这是否适合您的下一步？'}
              </p>
              <Link to="/consult" className="cta-button bg-primary text-white hover:bg-secondary gap-3">
@@ -751,7 +761,7 @@ export default function Home({ lang }: HomeProps) {
 
       {/* Ready to Begin - Final Footer CTA */}
       <section className="py-16 md:py-24 bg-primary text-left">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16">
+        <div className="site-container">
           <div className="text-white relative">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 translate-x-1/4 pointer-events-none" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
@@ -760,7 +770,7 @@ export default function Home({ lang }: HomeProps) {
                    {lang === 'en' ? 'Ready to' : '准备好'}<br />
                    <span className="text-secondary">{lang === 'en' ? 'Begin?' : '出发吗？'}</span>
                  </h2>
-                 <p className="text-lg font-bold text-white/80">
+                 <p className="text-sm font-bold text-white/80">
                    {lang === 'en' ? 'Start Your Master of Business Administration This July.' : '今年 7 月开启您的工商管理硕士旅程。'}
                  </p>
                  <div className="space-y-4">
@@ -855,7 +865,7 @@ function ProgrammeSectionNav({ lang }: { lang: 'en' | 'zh' }) {
   return (
     <section className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-border/70 text-left">
       <nav className="overflow-x-auto" aria-label={lang === 'en' ? 'Programme sections' : '课程页面导航'}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-max md:min-w-0">
+        <div className="site-container min-w-max md:min-w-0">
           <div className="flex items-center justify-start gap-4 md:gap-7 h-12">
             <span className="md:hidden relative text-xs font-black text-primary whitespace-nowrap py-4">
               {activeLabel}
@@ -882,7 +892,7 @@ function IconFeature({ title, desc }: any) {
   return (
     <motion.div variants={revealItem} whileHover={{ y: -6 }} className="p-6 bg-background rounded-3xl border border-border/5 hover:border-primary/20 transition-all text-left">
       <h5 className="font-black uppercase tracking-tight text-foreground mb-1 leading-tight">{title}</h5>
-      <p className="text-xs text-muted-foreground font-medium">{desc}</p>
+      <p className="text-sm text-muted-foreground font-medium">{desc}</p>
     </motion.div>
   );
 }
@@ -908,36 +918,60 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus('submitting');
-    
+
     const formData = new FormData(event.currentTarget);
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const larkWebhookUrl = import.meta.env.VITE_LARK_WEBHOOK_URL || '';
     const recipientEmail = import.meta.env.VITE_FORM_RECIPIENT_EMAIL || 'admissions@pickering.education';
     const firstName = String(formData.get('firstName') || '').trim();
     const lastName = String(formData.get('lastName') || '').trim();
-    const name = [firstName, lastName].filter(Boolean).join(' ');
+    const name = [firstName, lastName].filter(Boolean).join(' ') || 'website visitor';
     const email = String(formData.get('email') || '').trim();
     const phone = String(formData.get('phone') || '').trim();
     const experience = String(formData.get('experience') || '').trim();
     const industry = String(formData.get('industry') || '').trim();
-    const subject = encodeURIComponent(`Pickering callback request from ${name || 'website visitor'}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone / WhatsApp: ${phone}\nExperience: ${experience}\nIndustry: ${industry}`);
-    
-    try {
-      await fetch(`${apiUrl}/api/consult`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, lastName, name, email, phone, experience, industry, formType: 'consult' }),
-      });
-      setStatus('success');
-      setTimeout(() => setStatus('idle'), 5000); // Reset after 5 seconds
-    } catch {
+
+    const mailtoFallback = () => {
+      const subject = encodeURIComponent(`Pickering callback request from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nExperience: ${experience}\nIndustry: ${industry}`);
       window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-      setStatus('idle');
+    };
+
+    try {
+      if (larkWebhookUrl) {
+        const res = await fetch(larkWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            msg_type: 'text',
+            content: {
+              text: [
+                'New Pickering MBA Lead',
+                'Form: consult (homepage)',
+                `Name: ${name}`,
+                `Email: ${email}`,
+                `Phone: ${phone}`,
+                `Experience: ${experience}`,
+                `Industry: ${industry}`,
+                `Time: ${new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' })}`,
+              ].join('\n'),
+            },
+          }),
+        }).catch(() => null);
+
+        if (!res || !res.ok) mailtoFallback();
+      } else {
+        mailtoFallback();
+      }
+    } catch {
+      mailtoFallback();
     }
+
+    setStatus('success');
+    setTimeout(() => setStatus('idle'), 5000);
   };
 
   if (compact) {
-    const compactInput = 'border-0 border-b border-primary/30 bg-transparent px-2 py-1.5 text-[11px] font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary min-w-0';
+    const compactInput = 'border-0 border-b border-primary/30 bg-transparent px-2 py-1.5 text-xs font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary min-w-0';
     const compactSelect = `${compactInput} cursor-pointer appearance-none`;
     
     if (status === 'success') {
@@ -962,7 +996,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
             <option key={o.value} value={o.value}>{lang === 'en' ? o.en : o.zh}</option>
           ))}
         </select>
-        <button type="submit" disabled={status === 'submitting'} className="shrink-0 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+        <button type="submit" disabled={status === 'submitting'} className="shrink-0 bg-primary text-white text-xs font-black uppercase tracking-widest px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
           {status === 'submitting' 
             ? (lang === 'en' ? 'Sending...' : '发送中...') 
             : (lang === 'en' ? 'Get in Touch' : '联系顾问')}
@@ -971,7 +1005,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
     );
   }
 
-  const inputClass = 'w-full border-0 border-b-2 border-[#dbe8f7] bg-transparent px-0 py-3 text-base font-medium text-foreground outline-none transition-colors placeholder:text-[#adc2da] focus:border-primary';
+  const inputClass = 'w-full border-0 border-b-2 border-[#dbe8f7] bg-transparent px-0 py-3 text-sm font-medium text-foreground outline-none transition-colors placeholder:text-[#adc2da] focus:border-primary';
   const selectClass = `${inputClass} cursor-pointer appearance-none text-primary`;
 
   if (status === 'success') {
@@ -1013,7 +1047,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
           ? (lang === 'en' ? 'Submitting...' : '提交中...')
           : (lang === 'en' ? 'Get in Touch' : '联系顾问')}
       </button>
-      <p className="text-center text-[10px] text-muted-foreground font-medium leading-relaxed">
+      <p className="text-center text-xs text-muted-foreground font-medium leading-relaxed">
         {lang === 'en' ? (
           <>By submitting, you agree that Pickering Global Campus may contact you about admissions per our <Link to="/privacy-policy" className="font-bold text-primary underline underline-offset-4">Privacy Policy</Link>.</>
         ) : (
@@ -1032,7 +1066,7 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-6 text-left flex justify-between items-center group"
       >
-        <span className="font-bold text-foreground group-hover:text-primary transition-colors">{question}</span>
+        <span className="font-bold text-foreground group-hover:text-primary transition-colors text-sm">{question}</span>
         <ChevronDown size={20} className={`text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
@@ -1053,22 +1087,21 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
   );
 }
 
-function RecognitionFileCard({ title, subtitle, desc, tag, image }: any) {
+function RecognitionFileCard({ title, subtitle, desc, image }: any) {
   return (
     <motion.div
       variants={revealItem}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -6 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="group bg-white rounded-[2rem] border border-border/10 p-8 flex flex-col text-left hover:border-primary/20 transition-all"
+      className="group bg-white rounded-3xl border border-border/60 p-7 flex flex-col text-left hover:border-primary/30 hover:shadow-[0_16px_40px_-12px_rgba(30,80,168,0.12)] transition-all duration-300"
     >
-      <div className="flex justify-between items-start mb-6">
-        <div className="h-12 flex items-center">
-          <img src={image} alt={title} className="h-full w-auto object-contain" loading="lazy" decoding="async" />
-        </div>
+      {/* Fixed-height logo area — all cards align */}
+      <div className="h-10 flex items-center mb-6">
+        <img src={image} alt={title} className="h-full w-auto max-w-[120px] object-contain" loading="lazy" decoding="async" />
       </div>
-      <h4 className="text-lg font-black text-foreground mb-1 tracking-tight leading-tight">{title}</h4>
-      <p className="text-[9px] font-black text-primary/60 mb-4">{subtitle}</p>
-      <p className="text-[11px] text-muted-foreground font-medium leading-relaxed">{desc}</p>
+      <h4 className="text-sm font-black text-foreground mb-1 tracking-tight leading-snug">{title}</h4>
+      <p className="text-xs font-bold text-primary/50 mb-3 uppercase tracking-wider">{subtitle}</p>
+      <p className="text-sm text-muted-foreground font-medium leading-relaxed flex-1">{desc}</p>
     </motion.div>
   );
 }
@@ -1087,7 +1120,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
       variants={revealItem}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="bg-white p-10 md:p-12 rounded-[2.5rem] border border-border/10 text-left relative overflow-hidden group h-fit"
+      className="bg-white p-10 md:p-12 rounded-3xl border border-border/10 text-left relative overflow-hidden group h-fit"
     >
       <div className="relative -mx-10 -mt-10 md:-mx-12 md:-mt-12 mb-8 h-44 w-[calc(100%+5rem)] md:w-[calc(100%+6rem)] overflow-hidden">
         <img
@@ -1102,7 +1135,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
       <div className="relative z-10 text-left">
         <span className="text-5xl font-black text-primary/25 block mb-6">{number}</span>
         <h4 className="text-2xl font-black text-foreground mb-1 tracking-tighter">{cleanTitle}</h4>
-        <p className="text-[10px] font-black text-primary mb-6">{subtitle}</p>
+        <p className="text-xs font-black text-primary mb-6">{subtitle}</p>
         
         <button 
           onClick={() => setIsExpanded(!isExpanded)}
@@ -1126,7 +1159,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
                     <div className="mt-1.5 w-1.5 h-1.5 bg-primary/30 group-hover/item:bg-primary rounded-full flex-shrink-0 transition-colors" />
                     <p className="font-black text-foreground text-sm tracking-tight leading-tight">{m.name}</p>
                   </div>
-                  <p className="text-[10px] text-muted-foreground leading-relaxed pl-5 font-medium">{m.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-5 font-medium">{m.desc}</p>
                 </li>
               ))}
             </motion.ul>
@@ -1143,11 +1176,11 @@ function FacultyCard({ name, title, desc }: any) {
       variants={revealItem}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25, ease: easeOutQuint }}
-      className="bg-white p-8 rounded-[2rem] border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col items-start"
+      className="bg-white p-8 rounded-3xl border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col items-start"
     >
       <h4 className="text-xl font-black text-foreground mb-2 tracking-tight leading-tight">{name}</h4>
-      <p className="text-primary text-xs font-black mb-6">{title}</p>
-      <p className="text-[11px] text-muted-foreground leading-relaxed font-medium">{desc}</p>
+      <p className="text-primary text-xs font-black mb-4">{title}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed font-medium">{desc}</p>
     </motion.div>
   );
 }

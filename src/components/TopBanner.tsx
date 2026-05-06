@@ -88,7 +88,7 @@ export default function TopBanner({ lang }: TopBannerProps) {
           exit={{ height: 0, opacity: 0 }}
           className="bg-primary text-white overflow-hidden relative z-50 border-b border-white/5"
         >
-          <div className="max-w-7xl mx-auto px-10 py-1.5 flex items-center justify-center relative" style={{ minHeight: '2rem' }}>
+          <div className="site-container py-1.5 flex items-center justify-center relative" style={{ minHeight: '2rem' }}>
             <div className="overflow-hidden h-5 flex items-center">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -97,7 +97,7 @@ export default function TopBanner({ lang }: TopBannerProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35 }}
-                  className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-center px-8 whitespace-nowrap"
+                  className="text-xs md:text-xs font-black uppercase tracking-[0.15em] text-center px-8 whitespace-nowrap"
                 >
                   {items[itemIndex]}
                 </motion.p>

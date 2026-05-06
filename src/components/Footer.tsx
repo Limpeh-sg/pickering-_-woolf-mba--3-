@@ -20,7 +20,7 @@ export default function Footer({ lang }: FooterProps) {
     <footer className="bg-white text-primary text-left">
 
       {/* ── Main grid ────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-16 pb-10">
+      <div className="site-container pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 border-b border-primary/10 pb-12">
 
           {/* Col 1 — Brand */}
@@ -31,14 +31,14 @@ export default function Footer({ lang }: FooterProps) {
               className="h-8 w-auto object-contain"
               loading="lazy"
             />
-            <p className="text-[11px] text-primary/60 leading-relaxed font-medium">
+            <p className="text-xs text-primary/60 leading-relaxed font-medium">
               {lang === 'en'
                 ? 'Pickering Global Campus offers an accredited online Master of Business Administration programme as a member institution of Woolf University, licensed by the Malta Further and Higher Education Authority (MFHEA).'
                 : 'Pickering Global Campus 为 Woolf University 成员学院，经马耳他继续教育与高等教育管理局（MFHEA）批准，提供经认可的在线工商管理硕士课程。'}
             </p>
             {/* Accreditation logos */}
             <div>
-              <p className="text-[9px] font-black uppercase tracking-widest text-primary/40 mb-2">
+              <p className="text-xs font-black uppercase tracking-widest text-primary/40 mb-2">
                 {lang === 'en' ? 'Accreditation & Recognition' : '认证与认可'}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -53,7 +53,7 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Col 2 — Programme actions */}
           <div className="space-y-4">
-            <h6 className="text-[9px] font-black uppercase tracking-[0.3em] text-primary">
+            <h6 className="text-xs font-black uppercase tracking-[0.3em] text-primary">
               {lang === 'en' ? 'MBA Programme' : 'MBA 课程'}
             </h6>
             <nav className="flex flex-col gap-3">
@@ -68,18 +68,18 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Col 3 — Campus locations */}
           <div className="space-y-4">
-            <h6 className="text-[9px] font-black uppercase tracking-[0.3em] text-primary">
+            <h6 className="text-xs font-black uppercase tracking-[0.3em] text-primary">
               {lang === 'en' ? 'Campus Locations' : '校区地址'}
             </h6>
             <div className="space-y-5">
               <div>
-                <p className="text-[9px] font-black text-primary/40 uppercase tracking-widest mb-1">
+                <p className="text-xs font-black text-primary/40 uppercase tracking-widest mb-1">
                   {lang === 'en' ? 'Singapore' : '新加坡校区'}
                 </p>
                 <a
                   href="https://maps.google.com/?q=1+North+Bridge+Road+Singapore+179094"
                   target="_blank" rel="noreferrer"
-                  className="text-[11px] text-primary/60 font-medium leading-relaxed hover:text-primary transition-colors underline underline-offset-2"
+                  className="text-xs text-primary/60 font-medium leading-relaxed hover:text-primary transition-colors underline underline-offset-2"
                 >
                   1 North Bridge Road #06-01<br />
                   High Street Centre<br />
@@ -87,13 +87,13 @@ export default function Footer({ lang }: FooterProps) {
                 </a>
               </div>
               <div>
-                <p className="text-[9px] font-black text-primary/40 uppercase tracking-widest mb-1">
+                <p className="text-xs font-black text-primary/40 uppercase tracking-widest mb-1">
                   {lang === 'en' ? 'Estonia' : '爱沙尼亚校区'}
                 </p>
                 <a
                   href="https://maps.google.com/?q=Ahtri+tn+12+Tallinn+15551"
                   target="_blank" rel="noreferrer"
-                  className="text-[11px] text-primary/60 font-medium leading-relaxed hover:text-primary transition-colors underline underline-offset-2"
+                  className="text-xs text-primary/60 font-medium leading-relaxed hover:text-primary transition-colors underline underline-offset-2"
                 >
                   Ahtri tn 12<br />
                   Tallinn 15551, Estonia
@@ -105,13 +105,13 @@ export default function Footer({ lang }: FooterProps) {
           {/* Col 4 — Follow us + Legal links */}
           <div className="space-y-6">
             <div>
-              <h6 className="text-[9px] font-black uppercase tracking-[0.3em] text-primary mb-3">
+              <h6 className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-3">
                 {lang === 'en' ? 'Follow Us' : '关注我们'}
               </h6>
               <SocialLinks variant="menu" className="text-primary/70 !flex !flex-row !flex-wrap !gap-4" />
             </div>
             <div>
-              <h6 className="text-[9px] font-black uppercase tracking-[0.3em] text-primary/40 mb-3">
+              <h6 className="text-xs font-black uppercase tracking-[0.3em] text-primary/40 mb-3">
                 {lang === 'en' ? 'Legal' : '法律信息'}
               </h6>
               <nav className="flex flex-col gap-2">
@@ -129,11 +129,11 @@ export default function Footer({ lang }: FooterProps) {
         <div className="pt-8 space-y-4">
           {/* Entity info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <p className="text-[10px] font-bold text-primary/40 leading-relaxed">
+            <p className="text-xs font-bold text-primary/40 leading-relaxed">
               Pickering School OÜ · {lang === 'en' ? 'Estonian Registration' : '爱沙尼亚注册编号'}: 17359066<br />
               {lang === 'en' ? 'Member College of Woolf University' : 'Woolf University 成员学院'}
             </p>
-            <p className="text-[9px] text-primary/30 font-medium leading-relaxed">
+            <p className="text-xs text-primary/30 font-medium leading-relaxed">
               {lang === 'en'
                 ? 'Woolf (Malta) holds licence 2019-015 from the Malta Further and Higher Education Authority. Woolf University (Wisconsin, USA) is incorporated and approved under Wisconsin Statutes §440.52(10)(a). Pickering Global Campus is a trademark of Pickering School OÜ. Information on this site may change without prior notice.'
                 : 'Woolf（马耳他）持有马耳他继续教育与高等教育管理局许可证 2019-015。Woolf University（美国威斯康星州）依据威斯康星州法规第 440.52(10)(a) 条注册。Pickering Global Campus 为 Pickering School OÜ 商标。本站信息可能在不事先通知的情况下变更。'}
@@ -141,7 +141,7 @@ export default function Footer({ lang }: FooterProps) {
           </div>
           {/* Copyright */}
           <div className="border-t border-primary/8 pt-5">
-            <p className="text-[9px] font-black text-primary/30 uppercase tracking-widest">
+            <p className="text-xs font-black text-primary/30 uppercase tracking-widest">
               © {year} Pickering Global Campus. {lang === 'en' ? 'All Rights Reserved.' : '保留所有权利。'}
             </p>
           </div>
@@ -155,7 +155,7 @@ function FooterLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
-      className="text-[11px] font-bold text-primary/65 hover:text-primary transition-colors leading-none"
+      className="text-xs font-bold text-primary/65 hover:text-primary transition-colors leading-none"
     >
       {label}
     </Link>
@@ -166,7 +166,7 @@ function FooterSmallLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
-      className="text-[10px] font-bold text-primary/40 hover:text-primary/70 transition-colors leading-none"
+      className="text-xs font-bold text-primary/40 hover:text-primary/70 transition-colors leading-none"
     >
       {label}
     </Link>

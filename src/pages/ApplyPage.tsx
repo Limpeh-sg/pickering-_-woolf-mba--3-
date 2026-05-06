@@ -52,7 +52,7 @@ export default function ApplyPage({ lang }: ApplyPageProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-[2.5rem] shadow-2xl shadow-primary/5 overflow-hidden"
+          className="bg-white rounded-3xl shadow-2xl shadow-primary/5 overflow-hidden"
         >
           <div className="relative h-52 sm:h-64 md:h-80 overflow-hidden">
             <img
