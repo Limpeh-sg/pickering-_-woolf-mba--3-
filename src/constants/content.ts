@@ -231,10 +231,10 @@ export const content = {
       },
       fees: {
         title: "Course Fees",
-        appFee: "Application Fee: SGD 200",
-        tuition: "Tuition: SGD 9,800",
-        note: "Paid in 4 instalments. Monthly payment available with an additional 10% fee.",
-        immersion: "Residency: SGD 3,000"
+        appFee: "SGD 200",
+        tuition: "SGD 9,800",
+        note: "",
+        immersion: "SGD 3,000"
       },
       scholarships: {
         title: "Scholarships Up to 50%",
@@ -519,10 +519,10 @@ export const content = {
       },
       fees: {
         title: "课程费用",
-        appFee: "申请费: SGD 200",
-        tuition: "学费: SGD 9,800",
-        note: "标准课程费用分 4 期支付。可按月支付，需额外支付 10% 手续费。",
-        immersion: "研学费: SGD 3,000"
+        appFee: "SGD 200",
+        tuition: "SGD 9,800",
+        note: "",
+        immersion: "SGD 3,000"
       },
       scholarships: {
         title: "奖学金最高 50%",

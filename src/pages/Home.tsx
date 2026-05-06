@@ -179,7 +179,7 @@ export default function Home({ lang }: HomeProps) {
                   <img src="/assets/ECTS-BB8xoJ9D.png" alt="ECTS" className="h-12 w-auto object-contain" />
                 </div>
                 <p className="text-xs font-black text-black text-center leading-tight">
-                  Europass · ECTS
+                  EU Credit Transfer
                 </p>
               </div>
 
@@ -392,7 +392,7 @@ export default function Home({ lang }: HomeProps) {
           >
              <RecognitionFileCard title="Malta MFHEA" subtitle="Higher Education Authority" desc={t.recognition.framework.malta.text} image="/assets/Melta-DZ8e3MNc.png" />
              <RecognitionFileCard title="Council of Europe" subtitle="Lisbon Convention" desc={t.recognition.framework.lisbon.text} image="/assets/Lisbon Recognition Convention-DqjXrqhh.png" />
-             <RecognitionFileCard title="Europass · ECTS" subtitle="European Union Qualifications" desc={t.recognition.framework.eu.text} image="/assets/ECTS-BB8xoJ9D.png" />
+             <RecognitionFileCard title="EU Credit Transfer" subtitle="European Credit Transfer System" desc={t.recognition.framework.eu.text} image="/assets/ECTS-BB8xoJ9D.png" />
              <RecognitionFileCard title="AACSB Alliance" subtitle="Business Education Alliance" desc={lang === 'en' ? 'Member college of the AACSB Business Education Alliance, committed to advancing business education globally.' : '国际商学院协会商业教育联盟成员学院。'} image="/assets/AACSB-HRiRaVrV.png" />
           </motion.div>
         </div>
@@ -565,13 +565,13 @@ export default function Home({ lang }: HomeProps) {
                 <h4 className="text-2xl font-black text-foreground mb-6">{t.admissions.checklist.title}</h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   {t.admissions.checklist.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-xs font-bold text-muted-foreground">
+                    <li key={i} className="flex items-center gap-3 text-sm font-medium text-muted-foreground">
                       <CheckCircle2 size={16} className="text-primary shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-primary font-black">{t.admissions.checklist.note}</p>
+                <p className="text-sm text-primary font-bold">{t.admissions.checklist.note}</p>
               </div>
               <div className="p-8 md:p-10 lg:p-12 lg:border-l border-t lg:border-t-0 border-border/10 flex flex-col justify-center bg-primary/[0.02]">
                 <h4 className="text-2xl font-black text-foreground mb-4">{t.admissions.method.title}</h4>
@@ -611,13 +611,17 @@ export default function Home({ lang }: HomeProps) {
                 <div className="space-y-6 relative z-10">
                   <h4 className="text-2xl font-black">{t.admissions.fees.title}</h4>
                   <div>
-                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Application' : '申请费'}</p>
-                    <p className="text-xl font-black">{t.admissions.fees.appFee}</p>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Application Fee' : '申请费'}</p>
+                    <p className="text-2xl font-black">{t.admissions.fees.appFee}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Tuition' : '学费'}</p>
-                    <p className="text-xl font-black">{t.admissions.fees.tuition}</p>
-                    <p className="text-xs mt-2 text-white/70 font-medium leading-relaxed">{t.admissions.fees.note}</p>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Programme Tuition' : '学费'}</p>
+                    <p className="text-2xl font-black">{t.admissions.fees.tuition}</p>
+                    <p className="text-sm mt-1.5 text-white/70 font-medium">{lang === 'en' ? 'Paid in 4 instalments' : '分 4 期支付'}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Optional Residency' : '研学费（可选）'}</p>
+                    <p className="text-xl font-black">{t.admissions.fees.immersion}</p>
                   </div>
                 </div>
                 <div className="pt-6 border-t border-white/10 mt-6 space-y-3 relative z-10">
@@ -661,8 +665,8 @@ export default function Home({ lang }: HomeProps) {
                     <span className={`text-xs font-black uppercase tracking-widest ${card.accentClass}`}>{card.keyword}</span>
                   </div>
                   <div className="p-4">
-                    <h4 className="font-black text-foreground text-xs mb-1.5 tracking-tight leading-tight">{card.title}</h4>
-                    <p className="text-xs text-muted-foreground font-medium leading-relaxed">{card.desc}</p>
+                    <h4 className="font-black text-foreground text-sm mb-1.5 tracking-tight leading-tight">{card.title}</h4>
+                    <p className="text-sm text-muted-foreground font-medium leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
               ))}
@@ -888,7 +892,7 @@ function IconFeature({ title, desc }: any) {
   return (
     <motion.div variants={revealItem} whileHover={{ y: -6 }} className="p-6 bg-background rounded-3xl border border-border/5 hover:border-primary/20 transition-all text-left">
       <h5 className="font-black uppercase tracking-tight text-foreground mb-1 leading-tight">{title}</h5>
-      <p className="text-xs text-muted-foreground font-medium">{desc}</p>
+      <p className="text-sm text-muted-foreground font-medium">{desc}</p>
     </motion.div>
   );
 }
@@ -1062,7 +1066,7 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-6 text-left flex justify-between items-center group"
       >
-        <span className="font-bold text-foreground group-hover:text-primary transition-colors">{question}</span>
+        <span className="font-bold text-foreground group-hover:text-primary transition-colors text-sm">{question}</span>
         <ChevronDown size={20} className={`text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
@@ -1097,7 +1101,7 @@ function RecognitionFileCard({ title, subtitle, desc, image }: any) {
       </div>
       <h4 className="text-sm font-black text-foreground mb-1 tracking-tight leading-snug">{title}</h4>
       <p className="text-xs font-bold text-primary/50 mb-3 uppercase tracking-wider">{subtitle}</p>
-      <p className="text-xs text-muted-foreground font-medium leading-relaxed flex-1">{desc}</p>
+      <p className="text-sm text-muted-foreground font-medium leading-relaxed flex-1">{desc}</p>
     </motion.div>
   );
 }
@@ -1155,7 +1159,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
                     <div className="mt-1.5 w-1.5 h-1.5 bg-primary/30 group-hover/item:bg-primary rounded-full flex-shrink-0 transition-colors" />
                     <p className="font-black text-foreground text-sm tracking-tight leading-tight">{m.name}</p>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed pl-5 font-medium">{m.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-5 font-medium">{m.desc}</p>
                 </li>
               ))}
             </motion.ul>
@@ -1175,8 +1179,8 @@ function FacultyCard({ name, title, desc }: any) {
       className="bg-white p-8 rounded-3xl border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col items-start"
     >
       <h4 className="text-xl font-black text-foreground mb-2 tracking-tight leading-tight">{name}</h4>
-      <p className="text-primary text-xs font-black mb-6">{title}</p>
-      <p className="text-xs text-muted-foreground leading-relaxed font-medium">{desc}</p>
+      <p className="text-primary text-xs font-black mb-4">{title}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed font-medium">{desc}</p>
     </motion.div>
   );
 }

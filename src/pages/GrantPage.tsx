@@ -185,7 +185,7 @@ export default function GrantPage({ lang }: GrantPageProps) {
                 <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-5">{card.desc}</p>
                 <ul className="space-y-2">
                   {card.items.map((item, j) => (
-                    <li key={j} className="flex gap-2.5 text-xs text-muted-foreground">
+                    <li key={j} className="flex gap-2.5 text-sm text-muted-foreground">
                       <span className="text-primary font-black mt-0.5">•</span>
                       <span>{item}</span>
                     </li>
