@@ -44,9 +44,6 @@
 @layer base {
   * {
     @apply border-border;
-    /* Disable all shadows globally as per request */
-    box-shadow: none !important;
-    text-shadow: none !important;
   }
 
   body {
@@ -68,10 +65,6 @@
     @apply relative overflow-hidden;
   }
 
-  .uppercase {
-    text-transform: none !important;
-    letter-spacing: 0 !important;
-  }
 }
 
 @layer components {
