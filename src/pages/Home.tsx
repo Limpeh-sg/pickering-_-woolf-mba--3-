@@ -558,64 +558,69 @@ export default function Home({ lang }: HomeProps) {
             <h2 className="section-heading">{t.admissions.title}</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-border/10 text-left">
-              <h4 className="text-2xl font-black text-foreground mb-6">{t.admissions.checklist.title}</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                {t.admissions.checklist.items.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-xs font-bold text-muted-foreground">
-                    <CheckCircle2 size={16} className="text-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-[10px] text-primary font-black">{t.admissions.checklist.note}</p>
-            </div>
-            
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-border/10 text-left flex flex-col justify-center">
-              <h4 className="text-2xl font-black text-foreground mb-4">{t.admissions.method.title}</h4>
-              <p className="text-muted-foreground mb-8 text-sm leading-relaxed font-medium">{t.admissions.method.text}</p>
+          {/* Application Requirements — unified card */}
+          <div className="bg-white rounded-[2.5rem] border border-border/10 mb-8 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-8 md:p-10 lg:p-12">
+                <h4 className="text-2xl font-black text-foreground mb-6">{t.admissions.checklist.title}</h4>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  {t.admissions.checklist.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-xs font-bold text-muted-foreground">
+                      <CheckCircle2 size={16} className="text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[10px] text-primary font-black">{t.admissions.checklist.note}</p>
+              </div>
+              <div className="p-8 md:p-10 lg:p-12 lg:border-l border-t lg:border-t-0 border-border/10 flex flex-col justify-center bg-primary/[0.02]">
+                <h4 className="text-2xl font-black text-foreground mb-4">{t.admissions.method.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed font-medium">{t.admissions.method.text}</p>
+              </div>
             </div>
           </div>
 
-          {/* Intakes & Fees - Strike-through logic */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-             <div className="lg:col-span-2 bg-primary text-white p-6 sm:p-8 lg:p-10 rounded-[2.5rem] text-left flex flex-col gap-8">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+          {/* Intakes & Fees — unified card */}
+          <div id="tuition" className="bg-primary text-white rounded-[2.5rem] overflow-hidden scroll-mt-28">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto]">
+              {/* Intakes */}
+              <div className="p-8 md:p-10 lg:p-12 flex flex-col gap-8">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
                   <h4 className="text-2xl font-black">{t.admissions.intakes.title}</h4>
-                  <p className="text-[11px] font-black text-white/70">
+                  <p className="text-[11px] font-black text-white/60">
                     {lang === 'en' ? 'Rolling admission · 4 intakes per year' : '滚动招生 · 每年 4 次入学'}
                   </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
-                   {t.admissions.intakes.items.map((intake: any, i: number) => (
-                     <div key={i} className={`pb-4 border-b border-white/20 ${intake.expired ? 'opacity-30' : ''}`}>
-                        <p className={`font-black text-xl mb-2 ${intake.expired ? 'line-through decoration-white/50 decoration-2' : 'text-primary-foreground'}`}>
-                          {intake.label}
-                        </p>
-                        <div className="space-y-1 text-[10px] text-white/70 font-medium text-left">
-                          <p>{lang === 'en' ? 'Start' : '开课'}: {intake.start}</p>
-                          <p>{lang === 'en' ? 'Deadline' : '截止'}: {intake.deadline}</p>
-                        </div>
-                     </div>
-                   ))}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                  {t.admissions.intakes.items.map((intake: any, i: number) => (
+                    <div key={i} className={`pb-4 border-b border-white/20 ${intake.expired ? 'opacity-30' : ''}`}>
+                      <p className={`font-black text-lg mb-2 ${intake.expired ? 'line-through decoration-white/50 decoration-2' : ''}`}>
+                        {intake.label}
+                      </p>
+                      <div className="space-y-1 text-[10px] text-white/70 font-medium">
+                        <p>{lang === 'en' ? 'Start' : '开课'}: {intake.start}</p>
+                        <p>{lang === 'en' ? 'Deadline' : '截止'}: {intake.deadline}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-             </div>
-             <div id="tuition" className="bg-primary text-white p-6 sm:p-8 lg:p-10 rounded-[2.5rem] text-left relative overflow-hidden flex flex-col min-w-0 scroll-mt-28">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full" />
-                <h4 className="text-2xl font-black mb-8">{t.admissions.fees.title}</h4>
-                <div className="space-y-8 relative z-10 flex-1 text-left">
-                   <div className="text-left">
-                      <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Application' : '申请费'}</p>
-                      <p className="text-xl md:text-2xl font-black break-words">{t.admissions.fees.appFee}</p>
-                   </div>
-                   <div className="text-left">
-                      <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Tuition' : '学费'}</p>
-                      <p className="text-xl md:text-2xl font-black break-words">{t.admissions.fees.tuition}</p>
-                      <p className="text-xs mt-2 text-white/70 font-medium leading-relaxed">{t.admissions.fees.note}</p>
-                   </div>
+              </div>
+              {/* Fees */}
+              <div className="p-8 md:p-10 lg:p-12 lg:border-l border-t lg:border-t-0 border-white/10 flex flex-col justify-between lg:min-w-[260px] relative">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full pointer-events-none" />
+                <div className="space-y-6 relative z-10">
+                  <h4 className="text-2xl font-black">{t.admissions.fees.title}</h4>
+                  <div>
+                    <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Application' : '申请费'}</p>
+                    <p className="text-xl font-black">{t.admissions.fees.appFee}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Tuition' : '学费'}</p>
+                    <p className="text-xl font-black">{t.admissions.fees.tuition}</p>
+                    <p className="text-xs mt-2 text-white/70 font-medium leading-relaxed">{t.admissions.fees.note}</p>
+                  </div>
                 </div>
-                <div className="pt-6 border-t border-white/10 mt-auto space-y-3">
+                <div className="pt-6 border-t border-white/10 mt-6 space-y-3 relative z-10">
                   <Link to="/apply" className="cta-button w-full bg-white text-primary hover:bg-secondary hover:text-white">
                     {lang === 'en' ? 'Check My Eligibility' : '评估入学资格'}
                   </Link>
@@ -623,7 +628,8 @@ export default function Home({ lang }: HomeProps) {
                     {lang === 'en' ? 'View Scholarship Options →' : '查看奖学金方案 →'}
                   </Link>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
