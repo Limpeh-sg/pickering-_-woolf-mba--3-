@@ -194,8 +194,8 @@ export const content = {
         { name: "Lim Jee Yat", title: "Academic Quality and Strategic Development", desc: "MSc Construction Management and BSc (Hons) Civil Engineering, UTM Malaysia. Senior leadership experience across Singapore, Hong Kong, and Malaysia." },
         { name: "Aaron Pook", title: "Academic Affairs", desc: "Master of Information System, Griffith University. Leads curriculum development, teaching quality, faculty management, and academic operations." },
         { name: "Dr. Jimmy Low", title: "Learning Innovation and Management Education", desc: "Doctor of Philosophy, Multimedia University Malaysia; Master of Engineering in Media Engineering, Soongsil South Korea. Over 15 years in higher education." },
-        { name: "Dr. Chan Man Seong", title: "Management and Organisational Behaviour", desc: "Doctor of Philosophy and Master of Professional Management, Universiti Sains Malaysia; Bachelor of Science (Honours) Industrial Statistics, Universiti Tun Hussein Onn Malaysia. Award-winning academic and educator." },
         { name: "Dr. Chu Shin Ying", title: "Healthcare Innovation and Social Impact", desc: "Doctor of Philosophy, Master of Arts, and Bachelor of Arts (Honours) Psychology, University of Kansas. Research spans ageing, digital rehabilitation, and multidisciplinary innovation." },
+        { name: "Dr. Chan Man Seong", title: "Management and Organisational Behaviour", desc: "Doctor of Philosophy and Master of Professional Management, Universiti Sains Malaysia; Bachelor of Science (Honours) Industrial Statistics, Universiti Tun Hussein Onn Malaysia. Award-winning academic and educator." },
         { name: "Dr. Tan Chi Hau", title: "Human Resource Development and Marketing", desc: "Doctor of Philosophy, Sultan Idris Education University Malaysia; Master of Management, Universiti Malaysia Terengganu; Bachelor of Economics (Honours) Natural Resources, Universiti Malaysia Terengganu. More than a decade of university teaching experience." },
         { name: "Dr. Tee Chee Lip", title: "International and Financial Economics", desc: "Doctor of Philosophy and Master of Economics, Universiti Putra Malaysia; Bachelor of Economics (Honours) Financial Economics, Universiti Putra Malaysia. Economist and senior lecturer with active research and media commentary." },
         { name: "Vincent Chan", title: "Digital Business and Innovation", desc: "BBA (Hons) Banking and Finance, MMU Malaysia. Educator and innovation mentor focused on creative, entrepreneurial learning." }
@@ -482,8 +482,8 @@ export const content = {
         { name: "Lim Jee Yat", title: "学术质量与战略发展", desc: "马来西亚理工大学工程管理理学硕士、土木工程荣誉理学士。拥有新加坡、中国香港及马来西亚高级领导经验。" },
         { name: "Aaron Pook", title: "学术事务", desc: "澳大利亚格里菲斯大学信息系统硕士。主管课程开发、教学质量、教职人员管理及学术运营。" },
         { name: "Dr. Jimmy Low", title: "学习创新与管理教育", desc: "马来西亚多媒体大学哲学博士、韩国崇实大学媒体工程硕士。拥有超过 15 年高等教育经验。" },
-        { name: "Dr. Chan Man Seong", title: "商业管理与组织行为", desc: "马来西亚理科大学哲学博士、专业管理硕士，马来西亚敦胡先翁大学产业统计学荣誉理学士。" },
         { name: "Dr. Chu Shin Ying", title: "医疗创新与社会影响", desc: "美国堪萨斯大学哲学博士、文学硕士及心理学荣誉文学士。研究涵盖医疗创新、老龄化及数字康复。" },
+        { name: "Dr. Chan Man Seong", title: "商业管理与组织行为", desc: "马来西亚理科大学哲学博士、专业管理硕士，马来西亚敦胡先翁大学产业统计学荣誉理学士。" },
         { name: "Dr. Tan Chi Hau", title: "人力资源开发与市场营销", desc: "马来西亚苏丹依德理斯教育大学哲学博士，马来西亚登嘉楼大学管理学硕士及自然资源荣誉经济学士。" },
         { name: "Dr. Tee Chee Lip", title: "国际经济学与金融经济学", desc: "马来西亚博特拉大学哲学博士、经济学硕士及金融经济学荣誉经济学士。经济学家、高级讲师。" },
         { name: "Vincent Chan", title: "数字商业与创新", desc: "马来西亚多媒体大学银行与金融荣誉工商管理学士。教育者兼创新导师。" }

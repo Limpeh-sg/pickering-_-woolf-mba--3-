@@ -520,10 +520,10 @@ export default function Home({ lang }: HomeProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-120px' }}
-            className="max-w-2xl mx-auto space-y-8 text-center"
+            className="max-w-2xl space-y-8 text-left"
           >
             <div>
-              <p className="section-kicker text-secondary mb-3 justify-center">
+              <p className="section-kicker text-secondary mb-3">
                 {lang === 'en' ? 'Optional Experience' : '可选研学体验'}
               </p>
               <h2 className="text-xl md:text-3xl font-black tracking-tighter mb-5 text-white leading-tight">
@@ -534,7 +534,7 @@ export default function Home({ lang }: HomeProps) {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="flex flex-wrap gap-3">
                <span className="text-xs font-black text-white border border-white/20 rounded-xl px-4 py-2">{lang === 'en' ? 'Corporate Visits' : '企业参访'}</span>
                <span className="text-xs font-black text-white border border-white/20 rounded-xl px-4 py-2">{lang === 'en' ? 'Executive Network' : '高管人脉'}</span>
                <span className="text-xs font-black text-white border border-white/20 rounded-xl px-4 py-2">{lang === 'en' ? 'Leadership Workshops' : '领导力工作坊'}</span>
@@ -717,7 +717,7 @@ export default function Home({ lang }: HomeProps) {
         <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
         <div className="site-container relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-left mb-16">
             <p className="section-kicker mb-3">
               {lang === 'en' ? 'Questions You May Have' : '您可能关心的问题'}
             </p>
@@ -743,7 +743,7 @@ export default function Home({ lang }: HomeProps) {
              <FAQItem question={lang === 'en' ? "How do I apply?" : "我该如何申请？"} answer={lang === 'en' ? "Click Apply Now, fill in the online application form, and our admissions team will reach out within 2 business days to guide you through the next steps." : "点击【立即申请】，填写在线申请表，我们的招生团队将在2个工作日内与您联系，指引您完成后续步骤。"} />
           </motion.div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-16 text-left">
              <p className="text-sm font-black text-foreground mb-5">
                {lang === 'en' ? 'Want to know if this programme fits your next step?' : '想确认这是否适合您的下一步？'}
              </p>
@@ -914,32 +914,56 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus('submitting');
-    
+
     const formData = new FormData(event.currentTarget);
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const larkWebhookUrl = import.meta.env.VITE_LARK_WEBHOOK_URL || '';
     const recipientEmail = import.meta.env.VITE_FORM_RECIPIENT_EMAIL || 'admissions@pickering.education';
     const firstName = String(formData.get('firstName') || '').trim();
     const lastName = String(formData.get('lastName') || '').trim();
-    const name = [firstName, lastName].filter(Boolean).join(' ');
+    const name = [firstName, lastName].filter(Boolean).join(' ') || 'website visitor';
     const email = String(formData.get('email') || '').trim();
     const phone = String(formData.get('phone') || '').trim();
     const experience = String(formData.get('experience') || '').trim();
     const industry = String(formData.get('industry') || '').trim();
-    const subject = encodeURIComponent(`Pickering callback request from ${name || 'website visitor'}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone / WhatsApp: ${phone}\nExperience: ${experience}\nIndustry: ${industry}`);
-    
-    try {
-      await fetch(`${apiUrl}/api/consult`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, lastName, name, email, phone, experience, industry, formType: 'consult' }),
-      });
-      setStatus('success');
-      setTimeout(() => setStatus('idle'), 5000); // Reset after 5 seconds
-    } catch {
+
+    const mailtoFallback = () => {
+      const subject = encodeURIComponent(`Pickering callback request from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nExperience: ${experience}\nIndustry: ${industry}`);
       window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-      setStatus('idle');
+    };
+
+    try {
+      if (larkWebhookUrl) {
+        const res = await fetch(larkWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            msg_type: 'text',
+            content: {
+              text: [
+                'New Pickering MBA Lead',
+                'Form: consult (homepage)',
+                `Name: ${name}`,
+                `Email: ${email}`,
+                `Phone: ${phone}`,
+                `Experience: ${experience}`,
+                `Industry: ${industry}`,
+                `Time: ${new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' })}`,
+              ].join('\n'),
+            },
+          }),
+        }).catch(() => null);
+
+        if (!res || !res.ok) mailtoFallback();
+      } else {
+        mailtoFallback();
+      }
+    } catch {
+      mailtoFallback();
     }
+
+    setStatus('success');
+    setTimeout(() => setStatus('idle'), 5000);
   };
 
   if (compact) {
