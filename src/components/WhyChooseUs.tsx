@@ -27,7 +27,7 @@ export default function WhyChooseUs({ lang }: WhyChooseUsProps) {
           <p className="section-kicker mb-3">
             {lang === 'en' ? 'Why Pickering Master of Business Administration?' : '为什么选择 Pickering 工商管理硕士？'}
           </p>
-          <h2 className="text-xl md:text-3xl font-black text-foreground tracking-tighter leading-tight uppercase">
+          <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tighter leading-tight">
             {t.title}
           </h2>
         </div>
@@ -93,8 +93,8 @@ function HighlightCard({ title, desc, ease, index }: HighlightCardProps) {
         <p className="absolute right-5 bottom-4 text-3xl font-black text-primary/5">{patternText}</p>
       </div>
       <div className="p-8 md:p-10">
-        <h4 className="relative z-10 text-lg md:text-xl font-black text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors uppercase leading-tight">{title}</h4>
-        <p className="relative z-10 text-muted-foreground leading-relaxed font-medium text-xs md:text-sm">{desc}</p>
+        <h4 className="relative z-10 text-2xl font-black text-foreground mb-4 tracking-tight group-hover:text-primary transition-colors uppercase leading-tight">{title}</h4>
+        <p className="relative z-10 text-muted-foreground leading-relaxed font-medium text-sm">{desc}</p>
       </div>
     </motion.div>
   );
@@ -104,7 +104,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
   return (
     <div className="p-8 md:p-10 bg-white border-2 border-primary/10 rounded-[1.5rem] md:rounded-[2rem] text-left hover:border-primary transition-all group">
       <p className="text-3xl md:text-5xl font-black mb-2 md:mb-4 tracking-tighter text-primary group-hover:scale-110 transition-transform">{value}</p>
-      <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
+      <p className="text-xs md:text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
     </div>
   );
 }

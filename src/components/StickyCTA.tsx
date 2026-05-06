@@ -54,7 +54,7 @@ export default function StickyCTA({ lang }: StickyCTAProps) {
                 <p className="text-sm font-black text-foreground tracking-tight">
                   {lang === 'en' ? 'Ready to advance your career?' : '准备好提升您的职业吗？'}
                 </p>
-                <p className="text-[10px] text-muted-foreground font-medium mt-0.5">
+                <p className="text-xs text-muted-foreground font-medium mt-0.5">
                   {lang === 'en' ? '2026 cohort — spots filling fast' : '2026 年入学名额即将截止'}
                 </p>
               </div>
@@ -131,7 +131,7 @@ function MobileNavItem({ to, icon, label }: { to: string; icon: React.ReactNode;
       className="flex flex-col items-center justify-center py-3 gap-1 text-primary active:bg-primary/5 transition-colors border-r border-border/5 last:border-r-0"
     >
       {icon}
-      <span className="text-[9px] font-black leading-tight">{label}</span>
+      <span className="text-xs font-black leading-tight">{label}</span>
     </Link>
   );
 }

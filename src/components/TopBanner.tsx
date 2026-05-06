@@ -97,7 +97,7 @@ export default function TopBanner({ lang }: TopBannerProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35 }}
-                  className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-center px-8 whitespace-nowrap"
+                  className="text-xs md:text-xs font-black uppercase tracking-[0.15em] text-center px-8 whitespace-nowrap"
                 >
                   {items[itemIndex]}
                 </motion.p>

@@ -63,7 +63,7 @@ function FacultyCard({ name, title, desc }: any) {
     <div className="bg-white p-8 rounded-[2rem] border border-border/10 text-left group hover:border-primary transition-all h-full flex flex-col">
       <h4 className="text-xl font-black text-foreground mb-2 tracking-tight leading-tight">{name}</h4>
       <p className="text-primary text-xs font-black mb-6">{title}</p>
-      <p className="text-[11px] text-muted-foreground leading-relaxed font-medium">{desc}</p>
+      <p className="text-xs text-muted-foreground leading-relaxed font-medium">{desc}</p>
     </div>
   );
 }

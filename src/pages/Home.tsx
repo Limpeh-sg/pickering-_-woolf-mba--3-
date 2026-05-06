@@ -146,7 +146,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/Melta-DZ8e3MNc.png" alt="Malta MFHEA" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   {lang === 'en' ? 'Malta MFHEA' : '马耳他高等教育'}
                 </p>
               </div>
@@ -162,7 +162,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/Lisbon Recognition Convention-DqjXrqhh.png" alt="Lisbon Convention" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   {lang === 'en' ? 'Lisbon Convention' : '里斯本公约'}
                 </p>
               </div>
@@ -178,7 +178,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/ECTS-BB8xoJ9D.png" alt="ECTS" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   Europass · ECTS
                 </p>
               </div>
@@ -194,7 +194,7 @@ export default function Home({ lang }: HomeProps) {
                 <div className="h-14 flex items-center justify-center mb-2">
                   <img src="/assets/AACSB-HRiRaVrV.png" alt="AACSB" className="h-12 w-auto object-contain" />
                 </div>
-                <p className="text-[10px] font-black text-black text-center leading-tight">
+                <p className="text-xs font-black text-black text-center leading-tight">
                   AACSB
                 </p>
               </div>
@@ -210,7 +210,7 @@ export default function Home({ lang }: HomeProps) {
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.55, ease: easeOutQuint }}
                 >
-                  <p className="text-[10px] font-black text-secondary tracking-[0.3em] uppercase mb-4">
+                  <p className="text-xs font-black text-secondary tracking-[0.3em] uppercase mb-4">
                     {HERO_STATS[heroStatIndex].kicker[lang]}
                   </p>
                   <p className="text-6xl xl:text-7xl font-black text-white leading-none tracking-tighter mb-3">
@@ -246,7 +246,7 @@ export default function Home({ lang }: HomeProps) {
       {/* Mobile form — full layout, always visible below hero */}
       <section className="lg:hidden bg-white border-b border-border/10">
         <div className="site-container py-10">
-          <p className="font-black text-foreground text-base tracking-tight mb-1">
+          <p className="font-black text-foreground text-sm tracking-tight mb-1">
             {lang === 'en' ? 'Find out if this MBA fits your next step.' : '了解这个 MBA 是否适合你的下一步。'}
           </p>
           <p className="text-xs text-muted-foreground font-medium leading-relaxed mb-6">
@@ -270,7 +270,7 @@ export default function Home({ lang }: HomeProps) {
                 <p className="text-xs font-black text-primary mb-0.5">
                   {lang === 'en' ? 'Free Eligibility Check' : '免费资格评估'}
                 </p>
-                <p className="text-[10px] text-muted-foreground font-medium">
+                <p className="text-xs text-muted-foreground font-medium">
                   {lang === 'en' ? 'Advisor responds in 24h' : '顾问 24 小时内回复'}
                 </p>
               </div>
@@ -310,7 +310,7 @@ export default function Home({ lang }: HomeProps) {
               >
                 <p className="text-4xl md:text-5xl font-black text-primary tracking-tighter group-hover:scale-110 transition-transform origin-left">{stat.value}</p>
                 <div className="h-1 w-8 bg-secondary/30 rounded-full" />
-                <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest leading-tight">{stat.label}</p>
+                <p className="text-xs font-black text-muted-foreground uppercase tracking-widest leading-tight">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -410,10 +410,10 @@ export default function Home({ lang }: HomeProps) {
         <div className="absolute inset-0 bg-primary/10 backdrop-blur-[0.5px] pointer-events-none" />
         <div className="site-container bg-white rounded-2xl p-5 md:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-5 lg:gap-10 relative z-10">
           <div className="text-left space-y-2">
-            <p className="text-primary text-[10px] font-black uppercase tracking-widest">
+            <p className="text-primary text-xs font-black uppercase tracking-widest">
               {lang === 'en' ? 'Career Fit Check' : '职业适配评估'}
             </p>
-            <h3 className="text-lg md:text-xl font-black text-foreground tracking-tighter leading-tight">
+            <h3 className="text-2xl font-black text-foreground tracking-tighter leading-tight">
               {lang === 'en' ? 'Find Out If This MBA Fits Your Next Step' : '了解此 MBA 是否适合您的下一步'}
             </h3>
             <p className="text-xs text-muted-foreground font-medium leading-relaxed">
@@ -529,7 +529,7 @@ export default function Home({ lang }: HomeProps) {
               <h2 className="text-xl md:text-3xl font-black tracking-tighter mb-5 text-white leading-tight">
                 {lang === 'en' ? 'Singapore Residency Opportunity' : '新加坡研学机会'}
               </h2>
-              <p className="text-sm md:text-base text-white/80 font-medium leading-relaxed">
+              <p className="text-sm text-white/80 font-medium leading-relaxed">
                 {t.immersion.text}
               </p>
             </div>
@@ -571,7 +571,7 @@ export default function Home({ lang }: HomeProps) {
                     </li>
                   ))}
                 </ul>
-                <p className="text-[10px] text-primary font-black">{t.admissions.checklist.note}</p>
+                <p className="text-xs text-primary font-black">{t.admissions.checklist.note}</p>
               </div>
               <div className="p-8 md:p-10 lg:p-12 lg:border-l border-t lg:border-t-0 border-border/10 flex flex-col justify-center bg-primary/[0.02]">
                 <h4 className="text-2xl font-black text-foreground mb-4">{t.admissions.method.title}</h4>
@@ -587,17 +587,17 @@ export default function Home({ lang }: HomeProps) {
               <div className="p-8 md:p-10 lg:p-12 flex flex-col gap-8">
                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
                   <h4 className="text-2xl font-black">{t.admissions.intakes.title}</h4>
-                  <p className="text-[11px] font-black text-white/60">
+                  <p className="text-xs font-black text-white/60">
                     {lang === 'en' ? 'Rolling admission · 4 intakes per year' : '滚动招生 · 每年 4 次入学'}
                   </p>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                   {t.admissions.intakes.items.map((intake: any, i: number) => (
                     <div key={i} className={`pb-4 border-b border-white/20 ${intake.expired ? 'opacity-30' : ''}`}>
-                      <p className={`font-black text-lg mb-2 ${intake.expired ? 'line-through decoration-white/50 decoration-2' : ''}`}>
+                      <p className={`font-black text-xl mb-2 ${intake.expired ? 'line-through decoration-white/50 decoration-2' : ''}`}>
                         {intake.label}
                       </p>
-                      <div className="space-y-1 text-[10px] text-white/70 font-medium">
+                      <div className="space-y-1 text-xs text-white/70 font-medium">
                         <p>{lang === 'en' ? 'Start' : '开课'}: {intake.start}</p>
                         <p>{lang === 'en' ? 'Deadline' : '截止'}: {intake.deadline}</p>
                       </div>
@@ -611,11 +611,11 @@ export default function Home({ lang }: HomeProps) {
                 <div className="space-y-6 relative z-10">
                   <h4 className="text-2xl font-black">{t.admissions.fees.title}</h4>
                   <div>
-                    <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Application' : '申请费'}</p>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Application' : '申请费'}</p>
                     <p className="text-xl font-black">{t.admissions.fees.appFee}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-white/60 mb-1">{lang === 'en' ? 'Tuition' : '学费'}</p>
+                    <p className="text-xs font-black text-white/60 mb-1">{lang === 'en' ? 'Tuition' : '学费'}</p>
                     <p className="text-xl font-black">{t.admissions.fees.tuition}</p>
                     <p className="text-xs mt-2 text-white/70 font-medium leading-relaxed">{t.admissions.fees.note}</p>
                   </div>
@@ -662,7 +662,7 @@ export default function Home({ lang }: HomeProps) {
                   </div>
                   <div className="p-4">
                     <h4 className="font-black text-foreground text-xs mb-1.5 tracking-tight leading-tight">{card.title}</h4>
-                    <p className="text-[10px] text-muted-foreground font-medium leading-relaxed">{card.desc}</p>
+                    <p className="text-xs text-muted-foreground font-medium leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
               ))}
@@ -744,7 +744,7 @@ export default function Home({ lang }: HomeProps) {
           </motion.div>
 
           <div className="mt-16 text-center">
-             <p className="text-sm md:text-base font-black text-foreground mb-5">
+             <p className="text-sm font-black text-foreground mb-5">
                {lang === 'en' ? 'Want to know if this programme fits your next step?' : '想确认这是否适合您的下一步？'}
              </p>
              <Link to="/consult" className="cta-button bg-primary text-white hover:bg-secondary gap-3">
@@ -766,7 +766,7 @@ export default function Home({ lang }: HomeProps) {
                    {lang === 'en' ? 'Ready to' : '准备好'}<br />
                    <span className="text-secondary">{lang === 'en' ? 'Begin?' : '出发吗？'}</span>
                  </h2>
-                 <p className="text-lg font-bold text-white/80">
+                 <p className="text-sm font-bold text-white/80">
                    {lang === 'en' ? 'Start Your Master of Business Administration This July.' : '今年 7 月开启您的工商管理硕士旅程。'}
                  </p>
                  <div className="space-y-4">
@@ -943,7 +943,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
   };
 
   if (compact) {
-    const compactInput = 'border-0 border-b border-primary/30 bg-transparent px-2 py-1.5 text-[11px] font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary min-w-0';
+    const compactInput = 'border-0 border-b border-primary/30 bg-transparent px-2 py-1.5 text-xs font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary min-w-0';
     const compactSelect = `${compactInput} cursor-pointer appearance-none`;
     
     if (status === 'success') {
@@ -968,7 +968,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
             <option key={o.value} value={o.value}>{lang === 'en' ? o.en : o.zh}</option>
           ))}
         </select>
-        <button type="submit" disabled={status === 'submitting'} className="shrink-0 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+        <button type="submit" disabled={status === 'submitting'} className="shrink-0 bg-primary text-white text-xs font-black uppercase tracking-widest px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
           {status === 'submitting' 
             ? (lang === 'en' ? 'Sending...' : '发送中...') 
             : (lang === 'en' ? 'Get in Touch' : '联系顾问')}
@@ -977,7 +977,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
     );
   }
 
-  const inputClass = 'w-full border-0 border-b-2 border-[#dbe8f7] bg-transparent px-0 py-3 text-base font-medium text-foreground outline-none transition-colors placeholder:text-[#adc2da] focus:border-primary';
+  const inputClass = 'w-full border-0 border-b-2 border-[#dbe8f7] bg-transparent px-0 py-3 text-sm font-medium text-foreground outline-none transition-colors placeholder:text-[#adc2da] focus:border-primary';
   const selectClass = `${inputClass} cursor-pointer appearance-none text-primary`;
 
   if (status === 'success') {
@@ -1019,7 +1019,7 @@ function MiniLeadForm({ lang, compact }: { lang: 'en' | 'zh'; message?: boolean;
           ? (lang === 'en' ? 'Submitting...' : '提交中...')
           : (lang === 'en' ? 'Get in Touch' : '联系顾问')}
       </button>
-      <p className="text-center text-[10px] text-muted-foreground font-medium leading-relaxed">
+      <p className="text-center text-xs text-muted-foreground font-medium leading-relaxed">
         {lang === 'en' ? (
           <>By submitting, you agree that Pickering Global Campus may contact you about admissions per our <Link to="/privacy-policy" className="font-bold text-primary underline underline-offset-4">Privacy Policy</Link>.</>
         ) : (
@@ -1072,9 +1072,9 @@ function RecognitionFileCard({ title, subtitle, desc, tag, image }: any) {
           <img src={image} alt={title} className="h-full w-auto object-contain" loading="lazy" decoding="async" />
         </div>
       </div>
-      <h4 className="text-lg font-black text-foreground mb-1 tracking-tight leading-tight">{title}</h4>
-      <p className="text-[9px] font-black text-primary/60 mb-4">{subtitle}</p>
-      <p className="text-[11px] text-muted-foreground font-medium leading-relaxed">{desc}</p>
+      <h4 className="text-xl font-black text-foreground mb-1 tracking-tight leading-tight">{title}</h4>
+      <p className="text-xs font-black text-primary/60 mb-4">{subtitle}</p>
+      <p className="text-xs text-muted-foreground font-medium leading-relaxed">{desc}</p>
     </motion.div>
   );
 }
@@ -1108,7 +1108,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
       <div className="relative z-10 text-left">
         <span className="text-5xl font-black text-primary/25 block mb-6">{number}</span>
         <h4 className="text-2xl font-black text-foreground mb-1 tracking-tighter">{cleanTitle}</h4>
-        <p className="text-[10px] font-black text-primary mb-6">{subtitle}</p>
+        <p className="text-xs font-black text-primary mb-6">{subtitle}</p>
         
         <button 
           onClick={() => setIsExpanded(!isExpanded)}
@@ -1132,7 +1132,7 @@ function CurriculumStage({ number, title, subtitle, modules, lang }: any) {
                     <div className="mt-1.5 w-1.5 h-1.5 bg-primary/30 group-hover/item:bg-primary rounded-full flex-shrink-0 transition-colors" />
                     <p className="font-black text-foreground text-sm tracking-tight leading-tight">{m.name}</p>
                   </div>
-                  <p className="text-[10px] text-muted-foreground leading-relaxed pl-5 font-medium">{m.desc}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed pl-5 font-medium">{m.desc}</p>
                 </li>
               ))}
             </motion.ul>
@@ -1153,7 +1153,7 @@ function FacultyCard({ name, title, desc }: any) {
     >
       <h4 className="text-xl font-black text-foreground mb-2 tracking-tight leading-tight">{name}</h4>
       <p className="text-primary text-xs font-black mb-6">{title}</p>
-      <p className="text-[11px] text-muted-foreground leading-relaxed font-medium">{desc}</p>
+      <p className="text-xs text-muted-foreground leading-relaxed font-medium">{desc}</p>
     </motion.div>
   );
 }
